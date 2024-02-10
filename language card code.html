@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- This project was coded by Firas-benattia-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Blog preview card | Firas-benattia</title>
+  <link rel="stylesheet" href="/style.module.css">
+</head>
+
+<body>
+
+  <div class="card">
+    <div class="thumbnail">
+      <img src="/sources /IMG-20240107-WA0008.jpg" alt="" class="thumbnail">
+    </div>
+    <div class="meta">
+      <button class="button_action">Learning</button>
+      <p class="published_at">Published 06 Janvier 2024</p>
+    </div>
+    <h2 class="title"><a href="https://github.com/lucasfernandodev">HTML & CSS</a></h2>
+    <p class="description">These languages are the backbone of every website, defining structure, content, and
+      presentation.</p>
+    <div class="profile">
+      <div class="user-picture">
+        <img src="/sources /IMG-20240107-WA0008.jpg" alt="" class="user-picture">
+      </div>
+      <p class="user-name">Firas-benattia</p>
+    </div>
+  </div>
+</body>
+<style>
+ * {
+ padding: 0px;
+ margin: 0px;
+ box-sizing: border-box;
+}
+
+:root {
+ --primary: hsl(47, 88%, 63%);
+ --black: hsl(0, 0%, 7%);
+ --gray: hsl(0, 0%, 50%);
+ --white: hsl(0, 0%, 100%);
+}
+
+
+html,
+body {
+ font-size: 62.5%;
+ height: 100%;
+ display: grid;
+ place-items: center;
+ background: var(--primary);
+}
+h2 {
+ font-weight: 800;
+}
+
+a {
+ color: currentColor;
+ text-decoration: none;
+ transition: 250ms ease-in-out;
+}
+
+img {
+ height: 100%;
+ width: auto;
+ object-fit: cover;
+ object-position: center;
+}
+
+.card {
+ width: calc(100% - 48px);
+ max-width: 412px;
+ padding: 23px;
+ background-color: var(--white);
+ border-radius: 16px;
+ display: flex;
+ flex-direction: column;
+ box-shadow: 14px 14px 0px var(--black);
+ border: 2px solid var(--black);
+ }
+
+ .thumbnail {
+  background-color: var(--primary);
+  width: 100%;
+  height: 201px;
+  border-radius: 8px;
+  margin-bottom: 23px;
+  overflow: hidden;
+  }
+ .meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: 23px;
+ }
+
+ .title {
+  font-weight: 800;
+  font-size: 1.85rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+ }
+
+ .description {
+  font-size: 1.3rem;
+  color: var(--gray);
+  line-height: 160%;
+  margin-bottom: 23px;
+ }
+
+ .profile {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  height: 33px;
+ }
+
+ .card .meta .button_action {
+  background-color: var(--primary);
+  padding: 6px 12px;
+  font-weight: bold;
+  width: fit-content;
+  border-radius: 4px;
+  font-size: 1.3rem;
+  border: none;
+ }
+
+ .published_at {
+  font-size: 1.3rem
+ }
+
+ .card .profile .user-picture {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background-color: var(--primary);
+ }
+
+ .user-name {
+  font-weight: bold;
+  font-size: 1.3rem;
+
+ }
+
+ @media (max-width: 410px) {
+  body {
+   padding: 24px 0px;
+  }
+
+  .card {
+   box-shadow: 8px 8px 0px var(--black);
+   position: relative;
+   left: -8px;
+  }
+ }
+</style>
+</html>

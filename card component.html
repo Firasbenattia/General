@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!-- This project was coded by Firas-benattia-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>card component</title>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card__product-img">
+        <img src="/Pixel 7 Pro Wallpaper - iXpap(JPG).jpg" alt="Equilibrium">
+      </div>
+      <div class="card__body">
+        <a href="#">
+          <h3>Equilibrium #3429</h3>
+        </a>
+        <p>Our Equilibrium collection promotes balance and calm.</p>
+        <div class="wrapper">
+        </div>
+      </div>
+      <div class="card__footer">
+        <img src="/Pixel 7 Pro Wallpaper - iXpap(JPG).jpg" alt="card__auther-img" class="card__auther-img">
+        <p>Creation of<a href="#"> Jules Wyvern</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+<style>
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --aqua: hsla(178, 100%, 50%, 0.5);
+    --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+    --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(216, 30%, 55%);
+    --White: hsl(0, 0%, 100%);
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: var(--Very-dark-blue-main-BG);
+    min-height: 90vh;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: 'Outfit', sans-serif;
+}
+.container{
+    max-width: 350px;
+}
+.card{
+    background-color: var(--Very-dark-blue-card-BG);
+    padding: 24px;
+    border-radius: 15px;
+    box-shadow: 0px 20px 25px 15px rgba(0, 0, 0, 0.5), 0px 40px 30px 15px rgba(0, 0, 0, 0.1);
+}
+.card__product-img{
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.card__product-img img{
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+.card__product-img::after{
+    background: var(--aqua);
+    content: url(images/icon-view.svg);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.card__product-img:hover::after{
+    opacity: 1;
+}
+.card__body{
+    padding: 23px 0;
+    border-bottom: 1px solid var(--Very-dark-blue-line);
+    margin-bottom: 15px;
+}
+.card__body h3{
+    color: var(--White);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.card__body h3:hover{
+    color: var(--Cyan);
+}
+.card__body p{
+    color: var(--Very-dark-blue-line);
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 23px;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card__price,
+.card__countdown{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+.card__price{
+    color: var(--Cyan);
+}
+.card__icon{
+    margin-right: 6px;
+}
+.card__countdown{
+    color: var(--Very-dark-blue-line);
+}
+.card__footer{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.card__auther-img{
+    width: 34px;
+    height: 34px;
+    border: 2px solid var(--White);
+    border-radius: 50px;
+    margin-right: 15px;
+}
+.card__footer p{
+    color: var(--Very-dark-blue-line);
+    font-weight: 500;
+}
+.card__footer a{
+    color: var(--White);
+    font-weight: 400;
+}
+.card__footer a:hover{
+    color: var(--Cyan);
+}
+</style>
+</html>

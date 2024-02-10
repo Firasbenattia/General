@@ -1,0 +1,295 @@
+<!DOCTYPE html><!-- Created By Anis-shabou-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/nots/style-1.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Notes App</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">All Notes</div>
+        <div class="add-notes" onclick="addnote()" ><i class='bx bxs-edit icon'></i></div>
+    </nav>
+    <div class="container">
+        <form class="add">
+            <div class="form-control">
+             <label>Date</label>
+               <input type="datetime-local" name="date" autocomplete="off" id="date">
+                <label for="title">Title</label>
+                <input type="text" id="text" placeholder="Enter Your Title" autocomplete="off" name="title">
+              
+            </div>
+            <div class="form-control">
+                <label for="desc">Description</label><textarea type="text" id="desc" placeholder="Enter Your Desc"
+                    autocomplete="off" name="desc"></textarea>
+            </div>
+            <button class="submit" onclick="hide()"><i class='bx bx-plus' ></i>save notes</button>
+        </form>
+    </div>
+    <div class="notes">
+    </div>
+    <style>
+    @media only screen and (min-width:321px) and (max-width: 430px){
+    	*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#root{
+    display: flex;
+    flex-wrap: wrap;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    font-family: system-ui;
+}
+nav{
+    width: 100%;
+    display: flex;
+    min-height: 10vh;
+    background-color: blueviolet;
+    font-size: 3rem;
+    align-items: center;
+    padding: 0 3rem;
+    color: white;
+}
+nav .logo{
+ font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+.add-notes{
+ margin-left: 140px;
+ font-size: 30px;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0 0 0; 
+}
+
+
+form{
+ display: none;
+    width: 500px;
+    background-color: black;
+    padding: 1rem 2rem;
+    box-shadow: 0px 0px 10px #000 ;
+    border-radius: 20px;
+    border: 2px solid gray;
+    animation-name: border-notes;
+    animation-duration: 20s;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 0;
+}
+input{
+    padding: 10px 0 ;
+    width: 100%;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border: 0;
+    border-bottom: 2px solid blueviolet;
+    background-color: transparent;
+    outline: none;
+    color: white;
+}
+input:placeholder-shown{
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+textarea{
+ width: 100%;
+ height: 150px;
+ color: white;
+ background: black;
+ border-radius: 20px;
+ border: 2px solid blueviolet;
+}
+.background-card{
+ width: 120px;
+ height: 50px;
+ border: 2px solid red;
+ 
+}
+
+.form-control label{
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-bottom: 7px;
+    color: white;
+}
+.submit{
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 5px #000;
+    background-color: blueviolet;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+}
+.submit:hover{
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(241, 241, 43);
+    transition: all 0.5s;
+    border: 2px solid rgb(241, 241, 43);
+}
+.notes{
+    width: 100%;
+    display: flex;
+    padding: 2rem 3rem 2rem 2rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.card{
+    padding: 1rem 1.5rem 1rem;
+    width: 32rem;
+    height: auto 50px;
+    border-radius: 20px;
+    border: 2px solid grey;
+    margin: 1rem 2rem;
+    animation-name: border-notes;
+    animation-duration: 20s;
+}
+
+
+
+@keyframes border-notes{
+ 10%{border: 4px solid rebeccapurple;
+ }
+ 30%{border: 4px solid royalblue;}
+ 50%{border: 4px solid tomato;}
+ 70%{border: 4px  solid orangered;}
+ 90%{border: 4px solid yellow;}
+}
+.card h3{
+ color: white;
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-bottom: 7px;
+    position: relative;
+    display: inline;
+}
+.card h5{
+ color: gray;
+}
+.card p{
+ color: white;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    padding: 1rem 0;
+}
+.del{
+    padding: 8px 15px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    border: 2px solid gray;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+    color: gray;
+    background: black;
+}
+.del:hover{
+    background: darkgoldenrod;
+    transition: all 0.4s;
+    color: #fff;
+}
+footer{
+   width: 100%;
+   text-align: center;
+   font-size: 1.5rem;
+   position: fixed;
+   bottom: 10px;
+}
+}
+    </style>
+    <script>
+    	let submit=document.querySelector(".submit");
+let notesElem=document.querySelector('.notes');
+let title=document.querySelector("#text");
+let desc=document.querySelector('#desc');
+let date=document.querySelector("#date")
+let notes=JSON.parse(localStorage.getItem("notes"));
+if(notes){
+    notes.forEach(element => {
+        addNotes(element)
+    });
+}
+submit.addEventListener("click", (e)=>{
+    e.preventDefault();
+    addNotes()
+})
+function addNotes(obj) {
+    let card=document.createElement("div");
+    card.classList.add("card");
+    let titleval=title.value;
+    let descVal=desc.value;
+    let dateval=date.value;
+    if(obj){
+        titleval=obj.title;
+        descVal=obj.desc;
+        dateval=obj.date;
+    }
+    if(titleval){
+        card.innerHTML=`<h3>${titleval}</h3>
+        <h5>${dateval}</h5>
+                                    <p class="ptag">${descVal}</p>
+                             <button class="del"><i class='bx bxs-trash-alt'></i>Delete</button>
+                             `;
+        notesElem.appendChild(card);
+        updateLs()
+    }
+    let del=card.querySelector(".del");
+    del.addEventListener('click', ()=>{
+        card.remove();
+        updateLs();
+    })
+}
+
+
+
+
+
+
+
+function updateLs() {
+    let card=document.querySelectorAll(".card");
+    let arr=[];
+    card.forEach(element => {
+        arr.push({
+            title:element.children[0].innerText,
+            desc:element.children[1].innerText,
+            date:element.children[2].innerText
+        })
+    });
+    localStorage.setItem("notes", JSON.stringify(arr));
+}
+
+function addnote(){
+ document.querySelector(".add").style.display="block"
+}
+function hide(){
+ document.querySelector(".add").style.display="none";
+}
+    </script>
+</body>
+</html>

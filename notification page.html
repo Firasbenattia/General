@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+  <!-- This project was coded by Firas-benattia-->
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link rel="stylesheet" href="style.css" />
+ <title> Notifications page | Firas-benattia</title>
+</head>
+<body>
+ <main class="container">
+  <div class="wrapper">
+   <header class="header flex">
+    <h1>Notifications <span>7</span></h1>
+    <button class="btn" id="btn">Mark all as read</button>
+   </header>
+  </div>
+  <article class="notification__items flex">
+   <img src="/sources /IMG-20240107-WA0008.jpg" alt="avatar" />
+   <div class="description">
+    <p>
+     <span class="name"> Firas-benattia </span>
+     <span class="notification__action"> sent you a private message </span>
+    </p>
+    <h5 class="notification__time">1 days ago</h5>
+    <p class="notification__comment">
+     Hello, thanks for Watching videos today
+    </p>
+   </div>
+  </article>
+
+  <section class="notification">
+   <article class="notification__items flex unread" data-id="0">
+    <img src="/sources /portrait-homme-blanc-isole_53876-40306.jpg" alt="avatar" />
+    <div class="description">
+     <p>
+      <span class="name"> Mark Webber </span>
+      <span class="notification__action">
+       reacted to your recent post
+       <span id="mark" class="achievement unread_dot">Coding Languages Card </span>
+      </span>
+     </p>
+
+     <h5 class="notification__time">1m ago</h5>
+    </div>
+   </article>
+
+   <article class="notification__items flex unread" data-id="1">
+    <img src="/sources /206841592-une-femme-aux-cheveux-bouclés-regardant-par-la-fenêtre-image-ia-générative.jpg" alt="avatar" />
+    <div class="description">
+     <p>
+      <span class="name"> Angela Gray </span>
+      <span class="notification__action unread_dot"> followed you </span>
+     </p>
+
+     <h5 class="notification__time">5m ago</h5>
+    </div>
+   </article>
+
+   <article class="notification__items flex unread" data-id="2">
+    <img src="/sources /received_747289773325717.jpg" alt="avatar" />
+    <div class="description">
+     <p>
+      <span class="name"> malek 8020</span>
+      <span class="notification__action">
+       liked video <span class="club unread_dot">Profile Card</span>
+      </span>
+     </p>
+
+     <h5 class="notification__time">1 day ago</h5>
+    </div>
+   </article>
+
+   <article class="notification__items flex unread">
+    <img src="/sources /IMG-20240107-WA0008.jpg" alt="avatar" />
+    <div class="description">
+     <p>
+      <span class="name"> Firas-benattia </span>
+      <span class="notification__action unread_dot"> Post a new video </span>
+     </p>
+     <h5 class="notification__time">1 week ago</h5>
+    </div>
+    
+    
+    <img class="notification_img" src="./assets/images/image-chess.webp" alt="" />
+   </article>
+
+   <article class="notification__items flex">
+    <img src="/sources /1654586034411.jpeg" alt="avatar" />
+    <div class="description">
+     <p>
+      <span class="name"> Anna Kim </span>
+      <span class="notification__action"> reacted to your recent post </span>
+      <span class="achievement"> video calculator html css</span>
+     </p>
+     <h5 class="notification__time">7 weeks ago</h5>
+    </div>
+   </article>
+
+   <article class="notification__items flex unread">
+    <img src="/sources /1654586034411.jpeg" alt="avatar" />
+    <div class="description">
+     <p>
+      <span class="name">Anna Kim </span>
+      <span class="notification__action unread_dot"> Like to video </span>
+     </p>
+     <h5 class="notification__time">12 weeks ago</h5>
+    </div>
+   </article>
+  </section>
+ </main>
+ <style>
+  @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap");
+
+:root {
+  /* PRIMARY */
+  --clr-primary-Red: hsl(1, 90%, 64%);
+  --clr-primary-Blue: hsl(219, 85%, 26%);
+
+  /* NEUTRAL */
+  --clr-neutral-White: hsl(0, 0%, 100%);
+  --clr-neutral-VeryLightGrayishBlue: hsl(265, 99%, 98%);
+  --clr-neutral-LightGrayishBlue1: hsl(211, 68%, 94%);
+  --clr-neutral-LightGrayishBlue2: hsl(205, 33%, 90%);
+  --clr-neutral-GrayishBlue: hsl(219, 14%, 63%);
+  --clr-neutral-Darkgrayishblue: hsl(219, 12%, 42%);
+  --clr-neutral-VeryDarkblue: hsl(224, 21%, 14%);
+
+  /* FONT FAMILY */
+  --ff-Jakarta: "Plus Jakarta Sans", sans-serif;
+
+  /* FONT WEIGHT */
+  --fw-500: 500;
+  --fw-800: 800;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  border-radius: 15px;
+}
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  font-family: var(--ff-Jakarta);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--clr-neutral-LightGrayishBlue1);
+}
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+.container {
+  padding: 1rem;
+  max-width: 40rem;
+  background: var(--clr-neutral-White);
+}
+.header {
+  align-items: center;
+  justify-content: space-between;
+}
+.header h1 {
+  font-size: 1.3rem;
+  padding-block: 0.5rem;
+}
+
+.header h1 > span {
+  background: var(--clr-primary-Blue);
+  padding-inline: 0.5rem;
+  font-size: 1.3rem;
+  color: var(--clr-neutral-White);
+  border-radius: 0.3rem;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--clr-neutral-GrayishBlue);
+}
+.btn:hover{
+  color: var(--clr-primary-Blue);
+}
+.unread {
+  background: var(--clr-neutral-VeryLightGrayishBlue);
+}
+.read{
+  background: var(--clr-neutral-White);
+}
+.notification__items {
+  position: relative;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  align-items: start;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+
+
+.notification_img{
+  margin-left: auto;
+}
+.notification__items img {
+  width: 30%;
+  max-width: 2.75rem;
+}
+.description {
+  line-height: 1.3rem;
+  word-spacing: 2px;
+}
+.description .name {
+  font-weight: 800;
+}
+.description .name:hover,
+.achievement:hover {
+  color: var(--clr-primary-Blue);
+}
+.description .notification__action {
+  position: relative;
+  color: var(--clr-neutral-GrayishBlue);
+}
+.description .notification__time {
+  color: var(--clr-neutral-GrayishBlue);
+}
+
+.description .notification__comment {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  outline: 1px solid var(--clr-neutral-LightGrayishBlue2);
+  color: var(--clr-neutral-GrayishBlue);
+  font-weight: 500;
+}
+.notification__comment:hover{
+  background: var(--clr-neutral-VeryLightGrayishBlue);
+}
+
+.club{
+  position: relative;
+  color: var(--clr-primary-Blue);
+  font-weight: var(--fw-800);
+}
+.achievement{
+  position: relative;
+
+  color: var(--clr-neutral-GrayishBlue);
+  font-weight: var(--fw-800);
+}
+
+
+
+.achievement.unread_dot::after,
+.notification__action.unread_dot::after,
+.club.unread_dot::after{
+  position: absolute;
+  content: "";
+  right: -0.7rem;
+  top: 0.4rem;
+  height: 0.5rem;
+  width: 0.5rem;
+  background: var(--clr-primary-Red);
+  border-radius: 50%;
+
+}
+  .attribution {
+   font-size: 11px;
+   text-align: center;
+  }
+
+  .attribution a {
+   color: hsl(228, 45%, 44%);
+  }
+ </style>
+ <script>
+  const btn = document.querySelector("#btn");
+  
+  const notificationItems = document.querySelectorAll(".notification__items.unread");
+  const dotsItems = document.querySelectorAll(".unread_dot");
+  
+  function readIndividual(items) {
+   items.classList.remove("unread");
+   items.classList.remove("unread_dot");
+  }
+  
+  function readAll(items) {
+   for (let i = 0; i < items.length; i++) {
+    items[i].classList.remove("unread");
+    items[i].classList.remove("unread_dot");
+   }
+  }
+  
+  notificationItems.forEach((element) => {
+   element.addEventListener("click", (e) => {
+    readIndividual(element);
+    readIndividual(dotsItems[element.getAttribute("data-id")]);
+   });
+  });
+  
+  btn.addEventListener("click", () => {
+   readAll(notificationItems);
+   readAll(dotsItems);
+  });
+ </script>
+</body>
+
+</html>
