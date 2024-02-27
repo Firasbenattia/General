@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!-- This project was coded by Firas-benattia-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <main>
+        <h1>Tic-Tac-Toe Game</h1>
+        <div class="container">
+            <div class="game">
+                <button class="btnbox"></button>
+                <button class="btnbox"></button>
+                <button class="btnbox"></button>
+                <button class="btnbox"></button>
+                <button class="btnbox"></button>
+                <button class="btnbox"></button>
+                <button class="btnbox"></button>
+                <button class="btnbox"></button>
+                <button class="btnbox"></button>
+
+            </div>            
+
+        </div>
+        <div class="msg-container hide">
+            <p id="msg">Winner</p>
+            <button id="new-game">New Game</button>
+        </div>
+        <button id="reset">Reset Game</button>
+    </main>
+    <style src="style.css">
+    *{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    background-color: #548687;
+    text-align: center;
+}
+h1{
+    color: white;
+}
+p{
+    color: white;
+    text-decoration: underline;
+}
+.container{
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(199, 199, 23); */
+}
+.game{
+    height: 50vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1vmin;
+    /* background-color: aquamarine; */
+
+}
+.btnbox{
+    height:18vmin ;
+    width: 18vmin;
+    border-radius:1rem ;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+    font-size:8vmin ;
+    color:black;
+    background-color:white;
+}
+#reset{
+    padding: 1rem;
+    color: white;
+    border-radius: 1vmin;
+    border: none;
+    font-size:3vmin ;
+    background-color: rgb(143, 29, 29);
+}
+
+#new-game{
+    padding: 1rem;
+    color:black;
+    border-radius: 1vmin;
+    border: none;
+    font-size:3vmin ;
+    
+}
+
+#msg{
+    color:white;
+    font-size: 4vmin;
+    margin-bottom: 15px;
+    
+}
+.msg-container{
+    
+    height: 30vmin;
+    display: inline;
+    
+    
+}
+
+.hide{
+    display: none;
+}</style>
+    <script src="script.js">
+     let resetbtn = document.querySelector("#reset");
+
+let newGamebtn= document.querySelector("#new-game");
+
+let msgcontainer = document.querySelector(".msg-container");
+let msg = document.querySelector("#msg");
+let turn0 = true;
+
+
+// 2D Array of all possible wining value
+const winPattern = [
+    [0,1,2],
+    [0,3,6],
+    [0,4,8],
+    [1,4,7],
+    [2,4,6],
+    [2,5,8],
+    [3,4,5],
+    [6,7,8],
+];
+
+const resetgame = () =>{
+    turn0 = true;
+    enableBoxes();
+    msgcontainer.classList.add ("hide");
+
+
+}
+
+btn.forEach((btnbox) => {
+    btnbox.addEventListener("click",()=>{
+        console.log("box click");
+        if(turn0 === true){
+            btnbox.innerText ="O";
+            turn0 = false;
+        }else{
+            btnbox.innerText ="X";
+            turn0 = true;
+        }
+        btnbox.disabled = true;
+        cheekWinner();
+    });
+    
+});
+
+const disableBoxes = () =>{
+    for (let btns of btn)
+    {
+        btns.disabled = true;
+    }
+};
+const enableBoxes = () =>{
+    for (let btns of btn)
+    {
+        btns.disabled = false;
+        btns.innerText = "";
+    }
+};
+
+
+const showWinner = (winner) =>{
+    msg.innerText = `Congratulations, Winner is ${winner}`;
+    msgcontainer.classList.remove("hide");
+    disableBoxes();
+};
+
+const cheekWinner = () =>{
+    for(let pattern of winPattern){
+        let pos1val = btn[pattern[0]].innerText;
+        let pos2val = btn[pattern[1]].innerText;
+        let pos3val = btn[pattern[2]].innerText;
+
+        if(pos1val != "" && pos2val != "" && pos3val != ""){
+            if(pos1val === pos2val && pos2val === pos3val){
+                console.log("winner", pos1val);
+                showWinner(pos1val);
+            }
+        }
+        
+    }
+};
+
+newGamebtn.addEventListener("click", resetgame);
+resetbtn.addEventListener("click", resetgame);
+    </script>
+</body>
+</html>
