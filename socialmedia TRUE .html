@@ -1,0 +1,3013 @@
+<html lang="en">
+
+<head>
+ <!-- created program by firas benattia-->
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+ <meta name="theme-color" content="#000">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="copyright" content="Firas-benattia">
+ <meta name="reply-to" content="f46852001@gmail.com">
+ <meta name=”apple-mobile-web-app-title” content=”Firas-benattia”>
+ <link rel="icon" href="https://media.licdn.com/dms/image/C4D03AQFXHA3L_D3MBQ/profile-displayphoto-shrink_800_800/0/1659470079837?e=2147483647&v=beta&t=p3CORa1OWENB4Pd1mvUA4WdbBLHxEiUHpJOQEkcvvxI" type="image/x-icon">
+ <!--You are watching videos on YouTube -->
+ <!-- source icons page -->
+ <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+ <!-- Custom script -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+ <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+ <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+ <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+ <!-- translate source code -->
+ <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+ <script src="/book.html"></script>
+ <!-- Custom Styles -->
+ <link rel="stylesheet" href="#" id="style">
+ <!-- fonts style -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+ <!-- title page -->
+ <title>chat book</title>
+</head>
+
+<body ononline="online()" onoffline="ofline()">
+ <div id="login">
+  <div class="login-dow">
+   <div class="wrapper">
+    <div class="title">Social media</div>
+   </div>
+   <main class="container">
+    <p id="displayContact"></p>
+    <div class="add-container" id="loginpage">
+     <div class="addInputs">
+      <label class="login-label">Phone Number</label>
+      <input type="number" class="login-input" id="name" placeholder="Enter Phone Number" required />
+      <label class="login-label">Username</label>
+      <input type="text" class="login-input" id="email" placeholder="Enter username" required />
+      <label class="login-label">Password</label>
+      <input type="password" class="login-input" id="password" placeholder="Enter password" required />
+     </div>
+     <br>
+     <div class="opt">
+      <div id="forget-password" onclick="rest()">forget password</div>
+      <div id="forget-password" onclick="qrcode()" id="qr"> Download Data information</div>
+     </div>
+
+     <p id="displayNoti"></p>
+    </div>
+    <div class="get-container" id="get">
+     <label for="getContact" class="rest-title">Restoration Password</label>
+     <div class="getInputs">
+      <input type="number" class="login-input" id="getContactName" placeholder="Enter Phone number" required />
+      <button type="submit" id="getContact" onclick="forget()">
+       Get Password
+      </button>
+     </div>
+    </div>
+   </main>
+  </div>
+  <div class="box" id="qrcodepage">
+   <div class="qr-header">
+    <h1>Get QR Code Data</h1>
+    <input type="text" placeholder="your phone number/ your password" id="qr-text">
+    <div>
+     <label for="sizes">Select Size:</label>
+     <select id="sizes">
+      <option value="300">300×300</option>
+     </select>
+    </div>
+   </div>
+
+   <div class="qr-body">
+    <label class="qr-lab">Capture the screen to save your information</label>
+   </div>
+   <div class="qr-footer">
+    <a href="#loginpage" onclick="backlogin()" id="back-login-btn" class="generate-data">Login</a>
+
+    <a href="" id="generateBtn" class="generate-data">Generate</a>
+   </div>
+
+  </div>
+  <div class="get-btn">
+   <button type="submit" id="adduser" onclick="adduser()">
+    Log in
+   </button>
+  </div>
+ </div>
+ <div id="page">
+  <div class="head">
+
+   <br>
+   <nav class="nav" id="nav">
+    <div class="add-notes" id="js-search"><a href="#"><i class='bx bx-home-alt icon-nav'></i></a>
+    </div>
+    <div class="add-notes" id="js-show-all"><a href="#"><i class='bx bx-search-alt icon-nav'></i></a></div>
+    <div class="add-notes"><a href="#add" onclick="addnote()">
+      <i class='bx bx-message-square-add  icon-nav'></i>
+     </a></div>
+
+    <div class="add-notes" id="js-add-new">
+     <a href="#contact-panel">
+      <i class='bx bx-user-plus icon-nav'></i>
+     </a>
+    </div>
+    <div class="add-notes" onclick="listchat()"><a href="#">
+      <i class='bx bxs-notification icon-nav' id="notification"></i>
+     </a></div>
+
+    <div class="add-notes" onclick="chat()"><a href="#">
+      <i class='bx bx-chat icon-nav'></i>
+     </a></div>
+    <div class="add-notes" id="menuii"><a href="#" onclick="menu()">
+      <i class='bx bx-grid-alt icon-nav' id="menui"></i>
+     </a></div>
+   </nav>
+  </div>
+  <div id="con" class="con">
+   <!--search-data-friends-->
+   <div id="search-panel" class="panel">
+    <h1>Search Friends</h1>
+    <form id="search" action="#">
+     <div id="results">
+     </div>
+     <div>
+      <label>
+       <input type="text" name="search" id="search" placeholder="Enter name Friend" />
+      </label>
+     </div>
+     <input type="submit" value="Search" class="add-friend-btn" />
+    </form>
+   </div>
+   <!--add-information-friend-->
+   <div id="contact-panel" class="panel">
+    <form id="contact" action="#">
+     <h1>Add Friend's information </h1>
+     <div>
+      <label>
+       <input type="text" name="person" id="name" placeholder="NAME" />
+      </label>
+      <label>
+       <input type="text" name="phone" id="name" placeholder="Enter Phone Number" />
+      </label>
+      <label>
+       <input type="text" name="email" id="name" placeholder="Enter e-mail" />
+      </label>
+     </div>
+     <div>
+      <input type="submit" value="Add Friend" class="add-friend-btn" />
+     </div>
+    </form>
+   </div>
+   <!--show-all-data-friends-->
+   <div id="show-panel" class="panel">
+   </div>
+   <div class="chat-page" id="chatbox">
+    <div class="chatbox">
+     <br>
+     <div class="chat-details">
+      <label class="chat-label" ondblclick="showsetting()">Firas-benattia</label>
+      <a href="#chatvideo" class="chat-icon" onclick="showsetting()">
+       <i class='bx bx-dots-vertical-rounded chat-icon' onclick="getStream('video')" ondblclick="get()"></i>
+      </a>
+     </div>
+     <br>
+     <div class="chatlogs">
+      <div class="chat user">
+       <div class="chat-message"><span id="user"></span></div>
+      </div>
+      <div class="chat bot">
+       <div class="chat-message"> <span id="chatbot"></span></div>
+      </div>
+
+      <div class="chat-form"><input id="input" type="text" placeholder="say anything..." autocomplete="on" /></div>
+
+     </div>
+     <div class="chat-setting">
+      <button class="chat-setting-menu" onclick="chatappelvideo()"><i class='bx bx-camera'></i>
+       call video</button>
+      <label class="chat-setting-menu-name">customisation</label>
+      <button class="chat-setting-menu" onclick="lightmodechat()"><i class='bx bx-sun'></i>
+       light mode</button>
+      <label class="chat-setting-menu-name">privacy</label>
+      <button class="chat-setting-menu" onclick="dontshowmsgyou()" ondblclick="showmsgyou()"><i class='bx bx-show'></i>
+       show you message</button>
+      <br>
+      <button class="chat-setting-menu" onclick="block()" ondblclick="dontblock()"><i class='bx bx-error-alt'></i>
+       block</button>
+     </div>
+
+    </div>
+    <br>
+    <div class="message-email" id="msgemail">
+     <form action="https://formsubmit.co/f46852001@gmail.com" method="POST" id="user-page">
+      <div class="chat-email-details" onclick="chatappelvideo()">
+       <span class="chat-label">firas benattia</span>
+       <br>
+       <span class="chat-label">
+        f46852001@gmail.com
+       </span>
+      </div>
+      <br>
+      <label id="form-lab">message</label>
+      <input type="text" name="name" id="form-input" placeholder="enter your message" required>
+      <label id="form-lab" class="msgform-input">address email</label>
+      <input type="email" name="email" id="form-input" placeholder="enter your address email" required>
+      <br>
+      <button type="submit" id="form-btn" onclick="sendemail()">Send</button>
+     </form>
+    </div>
+    <div class="chat-appel-video" id="chatvideo">
+     <div class="columns">
+      <video controls autoplay id="vi"></video>
+      <br>
+      <div class="chat-appel-video-control">
+       <div class="column">
+        <p><button class="btn-control" type="button" onclick="getStream('video')" ondblclick="get()">Grab video</button></p>
+       </div>
+       <div class="column">
+        <p><button class="btn-control" id="callend" type="button" onclick="callend()">call end</button></p>
+
+       </div>
+       <div class="column">
+        <p><button class="btn-control" type="button" onclick="getStream('audio')">Grab audio</button></p>
+
+       </div>
+      </div>
+      <br>
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixQUjkrcAiAzIT9Xhrk6h3RIsUjbCjn4Ljw8UPKhtV3vXA5YI9M10JK0Ju_EaPq7reEK9xygRfexxP9nl7QKIHj3344KwytsdRmZ1M-IKVA9Bn9-kQOwicZb_bgw7HJFj4iJf-2CRnxB8b8Y4jKNyLTUZpcvFI4vv6vmqC-gdiiDxmHyHxiqz31aAW5Pg8/w256-h256-p-k-no-nu/IMG-20240107-WA0008.jpg" alt="" id="vi">
+
+     </div>
+    </div>
+   </div>
+   <div class="chat-list" id="listchat">
+    <br>
+
+    <div id="show-panel" class="panel"></div>
+    <br>
+    <div class="user-chat-frindes" onclick="chatbot()">
+     <a href="#user-page" id="useremail">
+      <span class="name-user-chat" id="boot-online">Firas-benattia</span>
+      <br>
+      <span class="email-user-chat">benattiafiras36@gmail.com</span>
+     </a>
+    </div>
+
+    <br>
+    <div class="user-chat-frindes" onclick="chatemail()">
+     <a href="#user-page" id="useremail">
+      <span class="name-user-chat" id="email-ofline">firas ben attia</span>
+      <br>
+      <span class="email-user-chat">f46852001@gmail.com</span>
+     </a>
+    </div>
+    <br>
+    <div class="user-chat-frindes">
+     <a class="email-user-chat" href="mailto:benattiafiras36@gmail.com" id="useremail">
+      <span class="name-user-chat" id="gmail-online">anis shabou</span>
+      <br>
+      <span class="email-user-chat">benattiafiras36@gmail.com</span>
+     </a>
+    </div>
+
+   </div>
+
+   <!--setting-web-->
+   <div class="profile-page">
+    <nav class="head-profile" id="head">
+     <h6 class="id">#
+      <div class="name-profile" id="nameprofile"></div>
+     </h6>
+     <div id="netmessage"></div>
+     <h6 class="name">@
+      <div class="email-profile" id="emailprofile"></div>
+     </h6>
+     <hr>
+     <div class="menu-profile-btn">
+      <button class="add-post-at-profile" onclick="addnote()"> <i class='bx bx-message-square-add  icon-nav'></i>Add</button>
+      <button class="add-post-at-profile" onclick="listchat()"> <i class='bx bxs-user-account  icon-nav'></i>Friends</button>
+      <button class="edit-post-at-profile" onclick="chat()"> <i class='bx bx-chat icon-nav'></i>
+       Chat</button>
+     </div>
+    </nav>
+   </div>
+   <section class="video" id="all-video">
+    <label class="name-notes" id="videolab">Descover</label>
+
+    <div class="vd-src">
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/dSUf2ZcqdhY" width="380" youtube-src-id="dSUf2ZcqdhY"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/Fv8PSa1s_HY" width="380" youtube-src-id="Fv8PSa1s_HY"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/910-eoKAimM" width="380" youtube-src-id="910-eoKAimM"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/O8XgduQLKZo" width="380" youtube-src-id="O8XgduQLKZo"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/5f2tOoeAheA" width="380" youtube-src-id="5f2tOoeAheA"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/mb1YlwMaB1w" width="380" youtube-src-id="mb1YlwMaB1w"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/2jhGNyCiMRE" width="380" youtube-src-id="2jhGNyCiMRE"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/3AqDlXZPcbE" width="380" youtube-src-id="3AqDlXZPcbE"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/8mAFr-1pF3Y" width="380" youtube-src-id="8mAFr-1pF3Y"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/TDLuaGOyHcc" width="380" youtube-src-id="TDLuaGOyHcc"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/skKePjA7jPI" width="380" youtube-src-id="skKePjA7jPI"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/LJBzphkrMwg" width="380" youtube-src-id="LJBzphkrMwg"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/jLmOTqW9khY" width="380" youtube-src-id="jLmOTqW9khY"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/O2hDC69xwQY" width="380" youtube-src-id="O2hDC69xwQY"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/6E6F-wEdcV8" width="380" youtube-src-id="6E6F-wEdcV8"></iframe></div><br />
+     <div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="500" src="https://www.youtube.com/embed/Y1qKGN97NvM" width="380" youtube-src-id="Y1qKGN97NvM"></iframe></div><br />&nbsp;<p></p>
+    </div>
+   </section>
+
+   <section class="not">
+    <div class="notes" id="notes">
+     <br>
+     <label class="name-notes">Latest posts</label>
+     <div class="other">
+      <div class="other-post">
+       <div class="post-card">
+        <div class="bgtitle">
+         <h3>Photographer</h3>
+         <h5>05/08/2019</h5>
+        </div>
+        <hr>
+        <br>
+        <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGhvdG98ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="" class="other-post-img">
+        <br>
+        <h4 class="ptag">Photography is a beautiful thing</h4>
+       </div>
+      </div>
+      <div class="other-post">
+       <div class="post-card">
+        <div class="bgtitle">
+         <h3>My judgments</h3>
+         <h5>08/02/2017</h5>
+        </div>
+        <hr>
+        <br>
+        <img src="https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="other-post-img">
+        <br>
+        <h4 class="ptag">Enduring the long road</h4>
+       </div>
+      </div>
+      <div class="other-post">
+       <div class="post-card">
+        <div class="bgtitle">
+         <h3>Comforts</h3>
+         <h5>08/02/2017</h5>
+        </div>
+        <hr>
+        <br>
+        <img src="https://i.pinimg.com/236x/75/2e/5f/752e5fdcc41db29d89dcb84204ab2bc4.jpg" alt="" class="other-post-img">
+        <br>
+        <h4 class="ptag">The only place to rest</h4>
+       </div>
+      </div>
+
+      <div class="other-post">
+       <div class="post-card">
+        <div class="bgtitle">
+         <h3>Firas benattia</h3>
+         <h5>05/07/2023</h5>
+        </div>
+        <hr>
+        <br>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiW1QEzL3WCRgRK-DJiGEFybnjDYXQhjSto8arb63Cc56ubisuAMMqO42OmEYDtjYIzKqcjVU9HrF9qLbGjtSu1k5jTzIsC7PQDD9gHOfi34kqMF1C5hXadVnl81u66UU_TGPIsYCikZqCVwEjDdwDkq6NURNXhPsk0bPPM5tq3YErFOtc60B9n1OF8gH5z/s1280/IMG-20231229-WA0017.jpg" alt="" class="other-post-img">
+        <br>
+        <h4 class="ptag">I smile</h4>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+
+   <div class="param" id="pp">
+
+    <br>
+    <div class="setting" id="setting">
+     <div class="setting-menu">
+      <button class="setting-menu-btn" onclick="settin()"> <i class='bx bx-user-circle icon-menu-setting'></i>
+       Profile</button>
+      <button class="setting-menu-btn" onclick="setting()"><i class='bx bx-cog icon-menu-setting'></i>setting</button>
+
+     </div>
+     <br>
+     <div class="setting-m">
+      <div class="show-menu" id="showmenu">
+       <label class="setting-label">Platform translator</label>
+
+       <div id="menuic">
+        <div id="google_translate_element"></div>
+       </div>
+      </div>
+      <label class="setting-label">Customize your view</label>
+      <label class="setting-option">Switch Mode</label>
+
+      <div id="menuic" onclick="light()"><i class='bx bx-toggle-right setting-icon'></i>Light-mode</div>
+      <br>
+      <label class="setting-option">Navigation Bar</label>
+      <div class="change-nav">
+       <div class="bgnav" id="nav1" onclick="nav1()"></div>
+       <br>
+       <div class="bgnav" id="nav2" onclick="nav2()"></div>
+       <br>
+       <div class="bgnav" id="nav3" onclick="nav3()"></div>
+      </div>
+      <div id="menuic" onclick="animation()"><i class='bx bx-paint-roll setting-icon'></i>Animation border</div>
+      <label class="setting-option">Color Post</label>
+      <div class="change-nav">
+       <div class="bgnav" id="titlec1" onclick="titlec1()"></div>
+       <br>
+       <div class="bgnav" id="titlec2" onclick="titlec2()"></div>
+       <br>
+       <div class="bgnav" id="titlec3" onclick="titlec3()"></div>
+      </div>
+      <label class="setting-label">Account management</label>
+      <div id="menuic" onclick="accountstatuson()"><i class='bx bx-user-voice bx-flip-horizontal setting-icon'></i>Account Status</div>
+      <div id="menuic" onclick="controlblog()">
+       <i class='bx bx-task-x setting-icon'></i>
+       Your blog posts
+      </div>
+      <div id="menuic" onclick="verifyaccount()"><i class='bx bxs-cookie setting-icon'></i>Verify your account on the browser </div>
+
+      <div id="menuic" onclick="downloadata()"><i class='bx bxs-cloud-download setting-icon'></i>Download Your Information</div>
+      <label class="setting-option">Accounts and checkouts</label>
+
+      <div id="menuic" onclick="addanotheraccount()"><i class='bx bx-plus setting-icon'></i>Add Account</div>
+
+      <div id="menuic" onclick="logout()"><i class='bx bx-log-out setting-icon'></i>log-out</div>
+      </a>
+      <div id="menuic" onclick="clearaccount()"><i class='bx bx-log-out setting-icon'></i>Delete your account</div>
+      <label class="setting-label">About the site</label>
+      <div id="menuic" onclick="about()"><i class='bx bx-toggle-right setting-icon'></i>About</div>
+      <div id="menuic" onclick="store()"><i class='bx bxs-data setting-icon'></i>Store your information</div>
+
+     </div>
+    </div>
+   </div>
+   <br>
+   <!--add-notes-->
+   <div class="container" id="addpost">
+    <form class="add" id="add">
+     <button class="submit" onclick="hide()"><i class='bx bx-plus'></i>partage post</button>
+     <div class="form-control">
+      <label for="title">Username</label>
+      <input type="text" id="text" placeholder="Enter Your Username" autocomplete="on" name="title" required>
+      <br>
+      <div class="change-nav">
+       <div class="bgnav" id="titlec1" onclick="titlec1()"></div>
+       <br>
+       <div class="bgnav" id="titlec2" onclick="titlec2()"></div>
+       <br>
+       <div class="bgnav" id="titlec3" onclick="titlec3()"></div>
+      </div>
+      <label>Date</label>
+      <input type="datetime-local" name="date" autocomplete="on" id="date" required>
+     </div>
+     <div class="form-control">
+      <label for="desc">Post</label><textarea type="text" id="desc" placeholder="write something" autocomplete="on" name="desc" required></textarea>
+     </div>
+
+    </form>
+   </div>
+
+   <br>
+   <br>
+   <!-- profile -->
+  </div>
+ </div>
+ <script>
+  function nav1() {
+   var element = document.body;
+   element.classList.toggle("nav1")
+  }
+
+  function titlec1() {
+   document.querySelector('.titlep').style.color = ' #FF5FA0';
+  }
+
+  function nav2() {
+   var element = document.body;
+   element.classList.toggle("nav2")
+  }
+
+  function titlec2() {
+   document.querySelector('.titlep').style.color = ' #39F5DE';
+  }
+
+  function nav3() {
+   var element = document.body;
+   element.classList.toggle("nav3")
+  }
+
+  function titlec3() {
+   document.querySelector('.titlep').style.color = ' #F8E356';
+  }
+  //js-login-add-user
+  function adduser() {
+   let cName = document.querySelector('#name').value;
+   let cpass = document.querySelector('#password').value;
+   let cemail = document.querySelector('#email').value;
+   let displayNotification = document.querySelector('#displayNoti');
+   var namebar = document.getElementById("name").value;
+   document.getElementById("nameprofile").innerHTML = namebar;
+   var emailbar = document.getElementById("email").value;
+   document.getElementById("emailprofile").innerHTML = emailbar;
+   if (cName == '' || cemail == '' || cpass == '') {
+    displayNotification.innerHTML = 'Please enter details !';
+    displayNotification.style.color = 'red';
+    document.querySelector('#adduser').style.display = 'block';
+    document.querySelector('#login').style.display = 'block';
+    document.querySelector('#page').style.display = 'none';
+    document.querySelector('#notes').style.display = 'none';
+    document.querySelector('.video').style.display = 'none';
+   } else {
+    // Set Items
+    localStorage.setItem(cName, cpass, cemail);
+    displayNotification.innerHTML = '✓ You are logged in successfully ';
+    displayNotification.style.color = '#1bd15d';
+    setTimeout(() => {
+     document.querySelector('#login').style.display = 'none';
+     document.querySelector('#page').style.display = 'block';
+     document.querySelector('#notes').style.display = 'block';
+     document.querySelector('.video').style.display = 'block';
+     // change color icon notification 
+     setTimeout(() => {
+      document.querySelector('#notification').style.color = '#17E9E1';
+      var audio = new Audio('/control panel source/ notification.mp3');
+      audio.play();
+     }, "1700");
+    }, "1500");
+   }
+   setInterval(() => {
+    displayNotification.innerHTML = '';
+   }, 9000);
+  }
+
+  // GET CONTACT
+  function forget() {
+   let displayDetail = document.querySelector('#displayContact');
+   let displayOutput = document.getElementById('displayContact');
+   displayOutput.classList.add('displayContactStyle');
+   let getContactName = document
+    .querySelector('#getContactName')
+    .value;
+
+
+
+   // GetItem
+   let output = localStorage.getItem(getContactName);
+   displayDetail.innerHTML = `${getContactName} : ${
+   output == null ? ' This contact detail is not added' : ` ${output}`
+   }`;
+   getContactName = '';
+  }
+  const qrText = document.getElementById('qr-text');
+  const sizes = document.getElementById('sizes');
+  const generateBtn = document.getElementById('generateBtn');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const qrContainer = document.querySelector('.qr-body');
+
+  let size = sizes.value;
+  generateBtn.addEventListener('click', (e) => {
+   e.preventDefault();
+   isEmptyInput();
+  });
+
+  sizes.addEventListener('change', (e) => {
+   size = e.target.value;
+   isEmptyInput();
+  });
+
+  function isEmptyInput() {
+   // if(qrText.value.length > 0){
+   //     generateQRCode();
+   // }
+   // else{
+   //     alert("Enter the text or URL to generate your QR code");
+   // }
+   qrText.value.length > 0 ? generateQRCode() : alert("Enter the text or URL to generate your QR code");;
+  }
+
+  function generateQRCode() {
+   qrContainer.innerHTML = "";
+   new QRCode(qrContainer, {
+    text: qrText.value,
+    height: size,
+    width: size,
+    colorLight: "#fff",
+    colorDark: "#000",
+   });
+  }
+
+
+
+  function qrcode() {
+   document.getElementById('qrcodepage').style.display = 'block';
+   document.querySelector('#loginpage').style.display = 'none';
+   document.getElementById('get').style.display = 'none';
+   document.getElementById('displayContact').style.display = 'none';
+   document.querySelector('#adduser').style.display = 'none';
+  }
+
+  function backlogin() {
+   document.querySelector('#qrcodepage').style.display = 'none';
+   document.querySelector('#loginpage').style.display = 'block';
+   document.querySelector('#adduser').style.display = 'block';
+   document.querySelector('#head').style.display = 'none';
+  }
+  //js-post-note-user
+  let submit = document.querySelector(".submit");
+  let notesElem = document.querySelector('.notes');
+  let title = document.querySelector("#text");
+  let desc = document.querySelector('#desc');
+  let date = document.querySelector("#date")
+  let notes = JSON.parse(localStorage.getItem("notes"));
+  if (notes) {
+   notes.forEach(element => {
+    addNotes(element)
+   });
+  }
+  submit.addEventListener('click', (e) => {
+   e.preventDefault();
+   addNotes()
+  })
+
+  function addNotes(obj) {
+   let card = document.createElement("div");
+   card.classList.add("card");
+   let titleval = title.value;
+   let descVal = desc.value;
+   let dateval = date.value;
+   if (obj) {
+    titleval = obj.title;
+    descVal = obj.desc;
+    dateval = obj.date;
+   }
+   if (titleval) {
+    card.innerHTML = `<div class="bgtitle"><h3 class="titlep">${titleval}</h3>
+        <div class="date-post">${dateval}</div>
+        <hr>
+        <div class="desc-post">${descVal}</div>
+        </div><hr>
+                       <div class="reacted">           
+         <button class="del"><i class='bx bxs-trash-alt'></i></button>
+           <button class="like" onclick="nolike()" ondblclick="yeslike()"><i class='bx bx-like' ></i></button>
+             <button class="share" onclick="share()"><i class='bx bxs-share-alt'></i></button>
+           </div>
+         </div>
+      <div class="share-op" id="partage">
+                             <button class="par" id="fcb"><i class='bx bxl-facebook-square' ></i> <a href="https://m.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjk0NDQyODk1LCJjYWxsc2l0ZV9pZCI6Mjc4OTkyMDk0NDYyNDI1MX0%3D&is_from_native_app=true">Facebook</a></button>
+                               <button class="par" id="inst"><i class='bx bxl-instagram' ></i><a href="https://www.instagram.com/">Instagram</a></button>
+                                 <button class="par" id="twit"><i class='bx bxl-twitter' ></i><a href="https://twitter.com/i/flow/login">Twitter</a></button>
+                                   </div>
+                             `;
+    notesElem.appendChild(card);
+    updateLs()
+   }
+   let del = card.querySelector(".del");
+   del.addEventListener('click', () => {
+    card.remove();
+    updateLs();
+
+   })
+  }
+
+  function updateLs() {
+   let card = document.querySelectorAll(".card");
+   let arr = [];
+   card.forEach(element => {
+    arr.push({
+     title: element.children[0].innerText,
+     desc: element.children[1].innerText,
+     date: element.children[2].innerText
+    })
+   });
+   localStorage.setItem("notes", JSON.stringify(arr));
+  }
+  //js-cookies-save-user
+  function setCookie(cname, cvalue, exdays) {
+   const d = new Date();
+   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+   let expires = "expires=" + d.toUTCString();
+   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  function getCookie(cname) {
+   let name = cname + "=";
+   let ca = document.cookie.split(';');
+   for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+     c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+     return c.substring(name.length, c.length);
+    }
+   }
+   return "";
+  }
+
+  function verifyaccount() {
+   let user = getCookie("username");
+   if (user != "") {
+
+    alert("All information in this account belongs to the owner of the phone number  " + user);
+
+   } else {
+    user = prompt("Please enter your phone number :", "");
+
+
+    if (user != "" && user != null) {
+     setCookie("username", user, 365);
+    }
+   }
+   if (!("Notification" in window)) {
+    // Check if the browser supports notifications
+    alert("This browser does not support desktop notification");
+   } else if (Notification.permission === "granted") {
+    // Check whether notification permissions have already been granted;
+    // if so, create a notification
+    const notification = new Notification("Hi there!");
+    // …
+   } else if (Notification.permission !== "denied") {
+    // We need to ask the user for permission
+    Notification.requestPermission().then((permission) => {
+     // If the user accepts, let's create a notification
+     if (permission === "granted") {
+      const notification = new Notification("Hi there!");
+      // …
+     }
+    });
+   }
+  }
+  //js-net-msg-user
+  let message = document.getElementById("netmessage");
+  let messageOnline = () => {
+   message.innerHTML = " You are online now ";
+   message.style.cssText = "font-size: 15px; color: #1DE9B6;";
+  };
+  let messageOffline = () => {
+   message.innerHTML = "Sorry, you are offline now ";
+   message.style.cssText = "font-size: 15px; color: red";
+   alert('connection filed');
+   document.querySelector('#adduser').style.display = 'none';
+   document.querySelector('.opt').style.display = 'none';
+   document.querySelector('#login').style.display = 'block';
+   document.querySelector('#page').style.display = 'none';
+   document.querySelector('#notes').style.display = 'none';
+   document.querySelector('.video').style.display = 'none';
+
+  };
+
+  if (window.navigator.onLine) {
+   messageOnline();
+  } else {
+   messageOffline();
+
+  }
+
+  window.addEventListener("online", messageOnline);
+  window.addEventListener("offline", messageOffline);
+
+  function online() {
+   alert("Your browser is working online.");
+  }
+
+  function ofline() {
+   alert("Your browser is working offline.");
+
+  }
+  //Function-js-control 
+  function addnote() {
+   document.querySelector(".add").style.display = 'block';
+   document.querySelector(".add").style.marginTop = '-30%';
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.querySelector('.show-menu').style.display = 'none';
+   document.querySelector('.video').style.display = 'none';
+   document.querySelector('.notes').style.display = 'none';
+   document.querySelector('.setting').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.getElementById('user-page').style.display = 'none';
+   document.querySelector('.name-notes').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+  }
+
+  function video() {
+   document.getElementById('show-panel').style.display = 'none';
+   document.querySelector('#videolab').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.show-menu').style.display = 'none';
+   document.querySelector('.notes').style.display = 'none';
+   document.querySelector('.vd-src').style.display = 'block';
+   document.querySelector('.vd-src').style.marginTop = '20%';
+   document.querySelector('.setting').style.display = 'none';
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.getElementById('user-page').style.display = 'none';
+   document.querySelector('.name-notes').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+
+
+  }
+
+  function hide() {
+   var audio = new Audio('/control panel source/partage post.mp3');
+      audio.play();
+       setTimeout(() => {
+   location.href = "#notes";
+   document.querySelector('#notes').style.display = "block";
+   document.querySelector('.video').style.display = "block";
+   document.querySelector(".add").style.display = "none";
+   document.querySelector(".show-menu").style.display = "none";
+   document.querySelector(".setting").style.display = "none";
+   document.querySelector(' .vd-src').style.marginTop = '20%';
+   document.querySelector('.name-notes').style.display = 'block';
+   document.querySelector('#head').style.display = 'none';
+       }, "1800");
+
+  }
+
+  function share() {
+   document.querySelector(".share-op").style.display = "grid";
+   document.querySelector(".share-op").style.gap = "5px";
+  }
+
+  function light() {
+   var element = document.body;
+   element.classList.toggle("light");
+  }
+  function chat() {
+   document.querySelector('.chatbox').style.display = 'block';
+   document.querySelector('#msgemail').style.display = "block";
+   document.querySelector('#listchat').style.display = 'none'
+   document.querySelector('.notes').style.display = 'none';
+   document.querySelector('.video').style.display = "none";
+   document.querySelector('.msgform-input').style.display = 'block';
+   document.getElementById('form-lab').style.display = 'block';
+   document.getElementById("form-input").placeholder = "Enter your message";
+   document.querySelector(".show-menu").style.display = "none";
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.setting').style.display = 'none';
+   document.getElementById('user-page').style.display = 'block';
+   document.querySelector('.name-notes').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+  }
+
+  function showsetting() {
+   document.querySelector('.chat-setting').style.display = 'flex';
+  }
+
+  function lightmodechat() {
+   document.querySelector('.chat-message').style.background = '#fff';
+   document.querySelector('.chat-message').style.color = '#000';
+  }
+
+  function dontshowmsgyou() {
+   document.querySelector('.chat-message').style.display = 'none';
+  }
+
+  function showmsgyou() {
+   document.querySelector('.chat-message').style.display = 'block';
+  }
+
+  function block() {
+   document.querySelector('#input').style.display = 'none';
+  }
+
+  function dontblock() {
+   document.querySelector('#input').style.display = 'block';
+  }
+
+  function chatbot() {
+   document.querySelector('#user-page').style.display = 'none';
+   document.querySelector('.chatbox').style.display = 'block';
+   document.querySelector('#listchat').style.display = 'none'
+   document.querySelector('.notes').style.display = 'none';
+   document.querySelector('.video').style.display = "none";
+
+   document.querySelector(".show-menu").style.display = "none";
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.setting').style.display = 'none';
+   document.querySelector('.name-notes').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+  }
+
+  function chatemail() {
+   document.querySelector('#user-page').style.display = 'block';
+   document.querySelector('#form-lab').style.display = 'block';
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none'
+   document.querySelector('.notes').style.display = 'none';
+   document.querySelector('.video').style.display = "none";
+
+   document.querySelector(".show-menu").style.display = "none";
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.setting').style.display = 'none';
+   document.querySelector('.name-notes').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+  }
+
+  function listchat() {
+   document.querySelector('#listchat').style.display = 'block';
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('.notes').style.display = 'none';
+   document.querySelector('.video').style.display = "none";
+
+   document.querySelector(".show-menu").style.display = "none";
+   document.getElementById('show-panel').style.display = 'block';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.getElementById('user-page').style.display = 'none';
+   document.querySelector('.setting').style.display = 'none';
+   document.querySelector('.name-notes').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+  }
+
+  function chatappelvideo() {
+   window.navigator.vibrate([2300, 10, 2300, 10, ]);
+   setTimeout(() => {
+    document.querySelector('#chatvideo').style.display = "block";
+    document.getElementById('nav').style.display = "none";
+    document.querySelector('.chatbox').style.display = 'none';
+    document.querySelector('.notes').style.display = 'none';
+    document.querySelector('.video').style.display = "none";
+    document.querySelector(".show-menu").style.display = "none";
+    document.getElementById('show-panel').style.display = 'none';
+    document.getElementById('search-panel').style.display = 'none';
+    document.getElementById('contact-panel').style.display = 'none';
+    document.getElementById('add').style.display = 'none';
+    document.querySelector('.setting').style.display = 'none';
+    document.querySelector('#listchat').style.display = 'none';
+    document.querySelector('.name-notes').style.display = 'none';
+    document.getElementById('user-page').style.display = 'none';
+    document.querySelector('#head').style.display = 'none';
+   }, "4800");
+  }
+
+  function callend() {
+   window.navigator.vibrate(120);
+   let person = prompt("How was the conversation?:");
+   if (person == null || person == "") {
+    text = "User cancelled the prompt.";
+   }
+   setTimeout(() => {
+    document.querySelector('.chatbox').style.display = "block";
+    document.getElementById('nav').style.display = "flex";
+    document.getElementById('user-page').style.display = 'block';
+    document.querySelector('#chatvideo').style.display = "none";
+    document.querySelector('.name-notes').style.display = 'none';
+   }, "70");
+
+
+  }
+
+  function feeds() {
+   document.getElementById('show-panel').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.show-menu').style.display = 'none';
+   document.querySelector('.other').style.display = 'block';
+   document.querySelector('.notes').style.display = 'block';
+   document.querySelector('.notes').style.marginTop = '-20rem';
+   document.querySelector('.card').style.display = 'none';
+   document.querySelector('.del').style.display = 'none';
+   document.querySelector('.video').style.display = 'none';
+   document.querySelector(' .vd-src').style.display = 'none';
+   document.querySelector(' .vd-src').style.marginTop = '-0.5%';
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('.name-notes').style.display = 'block';
+
+   document.querySelector('.setting').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.getElementById('user-page').style.display = 'none';
+  }
+
+  function controlblog() {
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.other').style.display = 'none';
+   document.querySelector('.notes').style.display = 'block';
+   document.querySelector('.notes').style.marginTop = '-10rem';
+   document.querySelector('.card').style.display = 'block';
+   document.querySelector('.del').style.display = 'block';
+   document.querySelector(".show-menu").style.display = "none";
+   document.querySelector('.video').style.display = 'none';
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('.name-notes').style.display = 'none';
+   document.getElementById('setting').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.getElementById('user-page').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+  }
+
+  function setting() {
+   document.querySelector(".show-menu").style.display = "block";
+   document.querySelector(".setting-m").style.display = "block";
+   document.querySelector(".setting-menu").style.display = "none";
+   document.querySelector('#msgemail').style.display = "none";
+   document.querySelector('#notes').style.display = "none";
+   document.querySelector('.other').style.display = "none";
+   document.querySelector('.video').style.display = 'none';
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.querySelector('.setting').style.display = 'block';
+   document.querySelector('.notes').style.display = 'none';
+   document.getElementById('user-page').style.display = 'block';
+   document.querySelector('.name-notes').style.display = 'block';
+   document.querySelector('#head').style.display = 'block';
+
+  }
+
+  function settin() {
+   document.querySelector(".show-menu").style.display = "none";
+   document.querySelector(".setting-m").style.display = "none";
+   document.querySelector(".setting-menu").style.display = "none";
+   document.querySelector('#msgemail').style.display = "none";
+   document.querySelector('#notes').style.display = "none";
+   document.querySelector('.other').style.display = "none";
+   document.querySelector('.video').style.display = 'none';
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.querySelector('.setting').style.display = 'none';
+   document.querySelector('.notes').style.display = 'block';
+   document.getElementById('user-page').style.display = 'block';
+   document.querySelector('.name-notes').style.display = 'block';
+   document.querySelector('#head').style.display = 'block';
+
+  }
+
+  function menu() {
+   document.querySelector(".show-menu").style.display = "none";
+   document.querySelector(".setting-m").style.display = "none";
+   document.querySelector(".setting-menu").style.display = "flex";
+   document.querySelector('#msgemail').style.display = "none";
+   document.querySelector('#notes').style.display = "none";
+   document.querySelector('.video').style.display = 'none';
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.querySelector('.setting').style.display = 'block';
+   document.uerySelector('.notes').style.display = 'none';
+   document.getElementById('user-page').style.display = 'block';
+   document.querySelector('.menu-profile-btn').style.display = 'none';
+   document.querySelector('.profile-page').style.display = 'block';
+   document.querySelector('.name-notes').style.display = 'none';
+   document.querySelector('.head-profile').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+
+  }
+
+  function animation() {
+   var element = document.querySelector('.nav');
+   element.classList.toggle("animation");
+  }
+
+  function addacconut() {
+   location.href = "#login";
+   document.querySelector('#login').style.display = "block";
+   document.querySelector('#chatvideo').style.display = "none";
+   document.getElementById('nav').style.display = "none";
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('.notes').style.display = 'none';
+
+   document.querySelector(".show-menu").style.display = "none";
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.getElementById('page').style.display = 'none';
+   document.querySelector('.setting').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.getElementById('user-page').style.display = 'none';
+   document.querySelector('.name-notes').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+  }
+
+  function logout() {
+   setTimeout(() => {
+
+    location.href = "#login";
+    document.querySelector('#login').style.display = "block";
+    document.querySelector('#chatvideo').style.display = "none";
+    document.getElementById('nav').style.display = "none";
+    document.querySelector('.chatbox').style.display = 'none';
+    document.querySelector('.notes').style.display = 'none';
+
+    document.querySelector(".show-menu").style.display = "none";
+    document.getElementById('show-panel').style.display = 'none';
+    document.getElementById('search-panel').style.display = 'none';
+    document.getElementById('contact-panel').style.display = 'none';
+    document.getElementById('add').style.display = 'none';
+    document.getElementById('page').style.display = 'none';
+    document.querySelector('.setting').style.display = 'none';
+    document.querySelector('#listchat').style.display = 'none';
+    document.getElementById('user-page').style.display = 'none';
+    document.querySelector('.name-notes').style.display = 'none';
+    document.querySelector('#head').style.display = 'none';
+   }, "1200");
+
+  }
+
+  function downloadata() {
+   document.querySelector('#qrcodepage').style.display = "block";
+   document.querySelector('#login').style.display = "block";
+   document.querySelector('.login-dow').style.display = 'none';
+   document.querySelector('#adduser').style.display = 'none';
+   document.querySelector('#back-login-btn').style.display = 'none';
+   document.querySelector('#chatvideo').style.display = "none";
+   document.getElementById('nav').style.display = "none";
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('.notes').style.display = 'none';
+
+   document.querySelector(".show-menu").style.display = "none";
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.getElementById('page').style.display = 'none';
+   document.querySelector('.setting').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.getElementById('user-page').style.display = 'none';
+   document.querySelector('.name-notes').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+  }
+
+  function about() {
+   alert('A social networking and blogging site developed by Tunisian programming');
+  }
+
+  function store() {
+   alert("Hello welcome .All your information is saved in the database and in your browser, and private blogs are saved and you can see them. They will be permanently deleted if you delete them. You can only recover the password, you cannot retrieve the friends list  Note: All your information will be deleted if you delete the cookies feature in your browser");
+   alert(' Your data is stored in your browsers local storage, which means no one else can see your data from a phone other than yours. The data that is stored is: name, surname, phone number, password, and the blog posts that you publish. Deletion If you delete the browser’s local storage, all your data will be deleted and you will not be able to retrieve it again');
+  }
+
+
+  function accountstatuson() {
+   var msg = document.getElementById("netmessage");
+   if (msg.style.display === "block") {
+    alert('The “Do not appear active” feature will be activated now ');
+    msg.style.display = "none";
+
+   } else {
+    msg.style.display = "block";
+   }
+  }
+
+  function rest() {
+   document.querySelector("#get").style.display = "block";
+   document.querySelector('#qrcodepage').style.display = 'none';
+  }
+
+  function nolike() {
+   document.querySelector(".like").style.background = "transparent";
+   document.querySelector(".like").style.color = "gray";
+  }
+
+  function yeslike() {
+   document.querySelector(".like").style.background = "red";
+   document.querySelector(".like").style.color = "#fff";
+  }
+
+  function share() {
+   document.querySelector('#partage').style.display = 'flex'
+  }
+  (function(global) {
+   var AddressBook = function(name, phone, email) {
+    return new AddressBook.init(name, phone, email);
+   };
+
+   AddressBook.prototype = {
+    //default functions
+    data: [
+       //add data here
+     ],
+    searchResults: [
+
+     ],
+    addNewContact: function(name, phone, email) {
+     this.data.push({
+      name: name,
+      phone: phone,
+      email: email
+     });
+     return this;
+    },
+    save: function() {
+     //save to local storage. This isn't hugely necessary
+
+    },
+    returnAll: function() {
+     return this.data;
+    },
+    displayData: function() {
+     this.log(this.data);
+     return this;
+    },
+    log: function(data) {
+     console.log(data);
+     return this;
+    },
+    search: function(searchTerm) {
+     if (this.data.length) {
+      for (var i = 0; i < this.data.length; i++) {
+       if (this.data[i].name.toLowerCase() == searchTerm.toLowerCase()) {
+        console.error(this.data[i]);
+        this.searchResults.push(this.data[i]);
+       }
+      }
+
+      return this.searchResults;
+     } else {
+      console.log("There are no results");
+     }
+     return this;
+    },
+    lastResults: function() {
+     return this.searchResults;
+    }
+   }
+
+   AddressBook.init = function(name, phone, email) {
+    var self = this;
+    //set up the address book
+    if (name || phone || email) {
+     self.addNewContact(name || "", phone || "", email || "");
+    }
+
+   }
+
+   AddressBook.init.prototype = AddressBook.prototype;
+
+   global.AddressBook = $ab = AddressBook;
+  })(window);
+
+  if (!window.contactList) { //check if we already have a contact list
+   window.contactList = $ab();
+  }
+
+  var form = document.getElementById('contact');
+  form.addEventListener('submit', function() {
+   if (!window.contactList) { //check if we already have a contact list
+    window.contactList = $ab(form.person.value, form.phone.value, form.email.value);
+   } else {
+    //saves new values rather than deleting old ones as well
+    contactList.addNewContact(form.person.value, form.phone.value, form.email.value);
+   }
+
+   form.person.value = '';
+   form.phone.value = '';
+   form.email.value = '';
+
+   event.preventDefault();
+  });
+
+  var searchForm = document.getElementById('search');
+  searchForm.addEventListener('submit', function() {
+   var results;
+   if (results !== undefined) {
+    results = null;
+   }
+   if (!window.contactList) {
+    window.contactList = $ab();
+   } else {
+    results = contactList.search(searchForm.search.value);
+   }
+   document.getElementById('results').innerHTML = '';
+   if (results.length > 0) {
+
+    for (var i = 0; i < results.length; i++) {
+     document.getElementById('results').innerHTML += '<div class="contact-item">Name:' + results[i].name + '<br>Phone:' + results[i].phone + '<br>Email:' + results[i].email + '</div><hr>';
+    }
+   } else {
+    document.getElementById('results').innerHTML += '<div class="contact-item">There are no results for this name</div><hr>';
+   }
+
+   //do something with the results
+   event.preventDefault();
+  });
+
+  document.getElementById('js-show-all').addEventListener('click', function() {
+   if (window.contactList) { //check if we already have a contact list
+    document.getElementById('show-panel').innerHTML = '';
+    var contacts = contactList.returnAll();
+    console.log(contacts);
+    if (contacts.length > 0) {
+     for (var i = 0; i < contacts.length; i++) {
+      document.getElementById('show-panel').innerHTML += '<label class="lis" >Contact</label><div class="contact-item">Name:' + contacts[i].name + '<br>Email:' + contacts[i].email + '<br>phone:' + contacts[i].phone + '</div><hr>';
+     }
+    } else {
+     document.getElementById('show-panel').innerHTML += '<div class="contact-item">Sorry, you do not have your friends data </div><hr>';
+    }
+   }
+   document.getElementById('show-panel').style.display = 'block';
+
+   document.getElementById('search-panel').style.display = 'block';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.notes').style.display = 'none';
+   document.querySelector('.video').style.display = 'none';
+   document.querySelector('.show-menu').style.display = 'none';
+   document.querySelector('.setting').style.display = 'none';
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.getElementById('user-page').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+  });
+
+  document.getElementById('js-search').addEventListener('click', function() {
+   document.getElementById('show-panel').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.show-menu').style.display = 'none';
+   document.querySelector('.other').style.display = 'flex';
+   document.querySelector('.notes').style.display = 'block';
+   document.querySelector('.notes').style.marginTop = '-4rem';
+   document.querySelector('.card').style.display = 'block';
+   document.querySelector('.del').style.display = 'none';
+   document.querySelector('.video').style.display = 'block';
+   document.querySelector(' .vd-src').style.display = 'flex';
+   document.querySelector(' .vd-src').style.marginTop = '45%';
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('.name-notes').style.display = 'block';
+
+   document.querySelector('.setting').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.getElementById('user-page').style.display = 'none';
+  });
+
+  document.getElementById('js-add-new').addEventListener('click', function() {
+   document.getElementById('show-panel').style.display = 'none';
+   document.querySelector('#head').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'block';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.notes').style.display = 'none';
+   document.querySelector('.video').style.display = 'none';
+   document.querySelector('.chatbox').style.display = 'none';
+
+   document.querySelector('.setting').style.display = 'none';
+   document.querySelector('.show-menu').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.getElementById('user-page').style.display = 'block';
+   document.querySelector('.chat-email-details').style.display = 'none';
+   document.getElementById('form-lab').style.display = 'none';
+   document.querySelector('.msgform-input').style.display = 'none';
+   document.getElementById("form-input").placeholder = " Type Your Name friends ";
+   document.querySelector(".msgform-input").placeholder = " address email friends ";
+   document.querySelector('.name-notes').style.display = 'none';
+  });
+
+  function googleTranslateElementInit() {
+   new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+  }
+  var trigger = [
+	["ahla", "aslema"],
+	["chna7welk", "lbs 3lik", "cv"],
+	["hy wink", "ch3amel", "wink"],
+	["chfama jdid"],
+	["win tosken"],
+	["9adech 3omrek"],
+	["25 ans"],
+	["tekhdem"],
+	["chniya tekhdem ye5i"],
+	["hya bh"],
+ ["tnajem ta3mel site web"],
+ ["nheb ala site"],
+ ["ok tw nab3athlek msg "],
+];
+  var reply = [
+	["ahla", "aslema"],
+	["wllhi hmdlh", "cv"],
+	["chy hani", " hani rekech kel3ada"],
+	["chy m fama hh", "kima l3ada"],
+	["Tunis"],
+	["18 ans w ett"],
+	["hya bh"],
+	["ey"],
+	["programmer"],
+	["hey"],
+	["ey 3leh"],
+	["ok na3malek site ama ab3athli msg ala email netfehmou : f46852001@gmail.com"],
+	["ok nice"]
+];
+  var alternative = ["The message cannot be sent, there is an update for the application"];
+  document.querySelector("#input").addEventListener("keypress",
+  //chat notification sounds
+   function(e) {
+    var audio = new Audio('/control panel source/ notification chat .mp3');
+    audio.play();
+    var key = e.which || e.keyCode;
+    if (key === 13) { //Enter button
+     var input = document.getElementById("input").value;
+     document.getElementById("user").innerHTML = input;
+     output(input);
+    }
+   });
+
+  function output(input) {
+   try {
+    var product = input + "=" + eval(input);
+   } catch (e) {
+    var text = (input.toLowerCase()).replace(/[^\w\s\d]/gi, ""); //remove all chars except words, space and 
+    text = text.replace(/ a /g, " ").replace(/i feel /g, "").replace(/whats/g, "what is").replace(/please /g, "").replace(/ please/g, "");
+    if (compare(trigger, reply, text)) {
+     var product = compare(trigger, reply, text);
+    } else {
+     var product = alternative[Math.floor(Math.random() * alternative.length)];
+    }
+   }
+   document.getElementById("chatbot").innerHTML = product;
+
+   document.getElementById("input").value = ""; //clear input value
+  }
+
+  function sendemail() {
+   var audio = new Audio('/database/Messenger Notification Sound Effect(M4A_128K).m4a');
+   audio.play();
+   alert('Wait a few seconds and the message will be sent');
+
+  }
+
+  function compare(arr, array, string) {
+   var item;
+   for (var x = 0; x < arr.length; x++) {
+    for (var y = 0; y < array.length; y++) {
+     if (arr[x][y] == string) {
+      items = array[x];
+      item = items[Math.floor(Math.random() * items.length)];
+     }
+    }
+   }
+   return item;
+  }
+
+  function getUserMedia(constraints) {
+   // if Promise-based API is available, use it
+   if (navigator.mediaDevices) {
+    return navigator.mediaDevices.getUserMedia(constraints);
+   }
+
+   // otherwise try falling back to old, possibly prefixed API...
+   var legacyApi = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+    navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+   if (legacyApi) {
+    // ...and promisify it
+    return new Promise(function(resolve, reject) {
+     legacyApi.bind(navigator)(constraints, resolve, reject);
+    });
+   }
+  }
+
+  function getStream(type) {
+   document.querySelector('#vi').style.display = 'block';
+   if (!navigator.mediaDevices && !navigator.getUserMedia && !navigator.webkitGetUserMedia &&
+    !navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
+    document.querySelector('#vi').style.display = 'block';
+    return;
+   }
+
+   var constraints = {};
+   constraints[type] = true;
+
+   getUserMedia(constraints)
+    .then(function(stream) {
+     var mediaControl = document.querySelector(type);
+
+     if ('srcObject' in mediaControl) {
+      mediaControl.srcObject = stream;
+     } else if (navigator.mozGetUserMedia) {
+      mediaControl.mozSrcObject = stream;
+     } else {
+      mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
+     }
+
+     mediaControl.play();
+    })
+    .catch(function(err) {
+     alert('Error: ' + err);
+    });
+  }
+
+  function user() {
+   document.querySelector('#head').style.display = 'none';
+   document.querySelector('#head').style.marginTop = '-12rem';
+   document.querySelector('.panel').style.display = 'none';
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.other').style.display = 'none';
+   document.querySelector('.notes').style.display = 'none';
+   document.querySelector('.card').style.display = 'block';
+   document.querySelector('.del').style.display = 'none';
+   document.querySelector(".show-menu").style.display = "none";
+   document.querySelector('.video').style.display = 'none';
+   document.querySelector('.vd-src').style.display = 'none';
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('.name-notes').style.display = 'none';
+   document.getElementById('setting').style.display = 'none';
+   document.querySelector('.setting-menu').style.display = 'none';
+   document.querySelector('#listchat').style.display = 'none';
+   document.getElementById('user-page').style.display = 'none';
+  }
+
+  function clearaccount() {
+   alert('Your account will be permanently deleted and you will not be able to recover your account');
+   location.reload();
+   document.querySelector('#login').style.display = "block";
+   document.querySelector('#page').style.display = "none";
+   document.querySelector('#chatvideo').style.display = "none";
+   document.getElementById('nav').style.display = "none";
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('.notes').style.display = 'none';
+
+   document.querySelector(".show-menu").style.display = "none";
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.setting').style.display = 'none';
+   location.href = "#login";
+   localStorage.clear();
+   const cookies = document.cookie.split(";");
+
+   for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i];
+    const eqPos = cookie.indexOf("=");
+    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+   }
+  }
+
+  function addanotheraccount() {
+   location.reload();
+   document.querySelector('#login').style.display = "block";
+   document.querySelector('#page').style.display = "none";
+   document.querySelector('#chatvideo').style.display = "none";
+   document.getElementById('nav').style.display = "none";
+   document.querySelector('.chatbox').style.display = 'none';
+   document.querySelector('.notes').style.display = 'none';
+
+   document.querySelector(".show-menu").style.display = "none";
+   document.getElementById('show-panel').style.display = 'none';
+   document.getElementById('search-panel').style.display = 'none';
+   document.getElementById('contact-panel').style.display = 'none';
+   document.getElementById('add').style.display = 'none';
+   document.querySelector('.setting').style.display = 'none';
+   location.href = "#login";
+   localStorage.clear();
+   const cookies = document.cookie.split(";");
+
+   for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i];
+    const eqPos = cookie.indexOf("=");
+    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+   }
+  }
+ </script>
+ <style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+  :root {
+   --name-application-color: #fff;
+   --body-background: #000;
+   --width-nav: 380px;
+   --side-nav-bar-widh: 77px;
+   --side-nav-bar-height: 99%;
+   --width-get-forget-btn-login: 95%;
+   --background-get-btn-add-btn: #222324;
+   --nav-background: #222324;
+   --nav-color: #fff;
+   --icon-color: #fff;
+   --input-color: #fff;
+   --forget-btn-color: #fff;
+   --btn-color: #fff;
+   --align-items: center;
+   --text-align: center;
+   --text-color: gray;
+   --label-color: #fff;
+   --bolder: bolder;
+   --font-body-style: 'Courier New', monospace;
+   /* border.style.css */
+   --border: none;
+   --border-radius: 20px;
+   --border-post: 2px solid gray;
+   --border-bottom-colors: 2px solid #C8C8C8;
+   --border-top-colors: 2px solid #c8c8c8;
+   --outline: none;
+   --background-btn: blue;
+   /* post.style.css */
+   --paragraph-title-post-color: #fff;
+   --paragraph-date-post-color: gray;
+   --paragraph-post-color: #fff;
+   --reaction-post-padding: 8px 10px;
+   --reaction-post-color: gray;
+   /*chat.style.css */
+   --online--: greenyellow;
+   --onofline--: #FFFA00;
+   --ofline--: red;
+   --callend-background: red;
+   --head-chat: #222324;
+   --border-head-chat: 2px solid #00FFE0;
+   --user-message: #000000;
+   --boot-message: #9300FF;
+   --height-message: 50px;
+   --height-input-message: 40px;
+   --message-input-background: #fff;
+   --message-input-color: #000;
+   --btn-send-message: #0C7B93;
+  }
+
+  .light {
+   --name-application-color: #fff;
+   --body-background: #000;
+   --width-nav: 380px;
+   --side-nav-bar-widh: 77px;
+   --side-nav-bar-height: 99%;
+   --width-get-forget-btn-login: 95%;
+   --background-get-btn-add-btn: #222324;
+   --nav-background: #222324;
+   --nav-color: #fff;
+   --icon-color: #fff;
+   --input-color: #fff;
+   --forget-btn-color: #fff;
+   --btn-color: #fff;
+   --align-items: center;
+   --text-align: center;
+   --text-color: gray;
+   --label-color: #fff;
+   --bolder: bolder;
+   --font-body-style: 'Courier New', monospace;
+   /* border.style.css */
+   --border: none;
+   --border-radius: 20px;
+   --border-post: 2px solid gray;
+   --border-bottom-colors: 2px solid #C8C8C8;
+   --border-top-colors: 2px solid #c8c8c8;
+   --outline: none;
+   --background-btn: blue;
+   /* post.style.css */
+   --paragraph-title-post-color: #fff;
+   --paragraph-date-post-color: gray;
+   --paragraph-post-color: #fff;
+   --reaction-post-padding: 8px 10px;
+   --reaction-post-color: gray;
+   /*chat.style.css */
+   --online--: greenyellow;
+   --onofline--: #FFFA00;
+   --ofline--: red;
+   --callend-background: red;
+   --head-chat: #222324;
+   --border-head-chat: 2px solid #00FFE0;
+   --user-message: #FFCC47;
+   --boot-message: #FCBC58;
+   --height-message: 50px;
+   --height-input-message: 40px;
+   --message-input-background: #fff;
+   --message-input-color: #000;
+   --btn-send-message: #0C7B93;
+  }
+
+
+  .nav1 {
+   --nav-background: #003850;
+
+  }
+
+  .nav2 {
+   --nav-background: #F84808;
+  }
+
+  .nav3 {
+   --nav-background: #FF1744;
+
+  }
+
+  * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+  }
+
+  body::selection {
+   background: transparent;
+  }
+
+  body {
+   max-width: 100%;
+   background: var(--body-background);
+   border-radius: var(--border-radius);
+   font-family: var(--font-body-style);
+  }
+
+  .animation {
+   animation-name: animation;
+   animation-duration: 10s;
+  }
+
+  @keyframes animation {
+   10% {
+    border: 1.5px solid rebeccapurple;
+
+   }
+
+   30% {
+    border: 1.5px solid royalblue;
+   }
+
+   50% {
+    border: 1.5px solid tomato;
+   }
+
+   70% {
+    border: 1.5px solid orangered;
+   }
+
+   90% {
+    border: 1.5px solid yellow;
+   }
+  }
+
+  #page {
+   display: none;
+   margin-top: -10rem;
+  }
+
+  .wrapper {
+   width: var(--width-nav);
+   margin-top: 5%;
+   margin-left: 4%;
+   border-radius: var(--border-radius);
+  }
+
+  .wrapper .title {
+   font-size: 35px;
+   font-weight: 600;
+   text-align: var(--text-align);
+   line-height: 100px;
+   color: var(--nav-color);
+   user-select: none;
+   border-radius: var(--border-radius);
+   background: var(--nav-background);
+  }
+
+  .container {
+   width: var(--width-nav);
+   border-radius: var(--border-radius);
+   padding: 20px;
+   margin: 25px;
+   color: var(--btn-color);
+  }
+
+  #add {
+   display: block;
+  }
+
+  .get-container {
+   margin-top: 10px;
+   padding-top: 10px;
+   border-top: var(--border-top-colors);
+  }
+
+  h1 {
+   color: var(--text-color);
+   font-family: sans-serif;
+  }
+
+
+
+
+  label {
+   display: block;
+   padding: 8px 0;
+   font-weight: 500;
+   color: var(--text-color);
+  }
+
+  .login-label {
+   color: var(--label-color);
+   font-size: 20px;
+  }
+
+  .login-input {
+   border-radius: var(--border-radius);
+   border: var(--border);
+   border-bottom: var(--border-bottom-colors);
+   margin-left: -3%;
+   padding: 10px;
+   outline: var(--outline);
+   background: var(--body-background);
+   color: var(--input-color);
+  }
+
+  .addInputs,
+  .getInputs {
+   display: block;
+   justify-content: space-between;
+   align-items: var(--align-items);
+  }
+
+  .displayContactStyle {
+   width: 360px;
+   font-weight: 600;
+   background-color: var(--nav-background);
+   color: var(--nav-color);
+   border-radius: var(--border-radius);
+   padding: 10px;
+  }
+
+  .opt {
+   display: flex;
+  }
+
+  #displayNoti {
+   font-weight: 600;
+   height: 40px;
+  }
+
+  #adduser {
+   display: block;
+   width: var(--width-get-forget-btn-login);
+   margin-top: -5%;
+   margin-left: 7px;
+   padding: 15px;
+   font-size: 15px;
+   font-weight: 500;
+   border: var(--border);
+   border-radius: var(--border-radius);
+   background: var(--background-get-btn-add-btn);
+   color: var(--btn-color);
+  }
+
+  #getContact {
+   width: var(--width-get-forget-btn-login);
+   margin: 10px 0;
+   padding: 15px;
+   font-size: 15px;
+
+   font-weight: 500;
+   border: var(--border);
+   border-radius: var(--border-radius);
+   background: var(--background-get-btn-add-btn);
+   color: var(--btn-color);
+  }
+
+  #forget-password {
+   text-align: var(--text-align);
+   color: var(--forget-btn-color);
+   margin-top: 5px;
+  }
+
+  .rest-title {
+   color: var(--label-color);
+  }
+
+  #get {
+   display: none;
+  }
+
+  #netmessage {
+   font-size: 3px;
+   margin-left: 4%;
+   cursor: pointer;
+  }
+
+  .nav {
+   position: fixed;
+   align-content: flex-end;
+   width: var(--side-nav-bar-width);
+   height: var(--side-nav-bar-height);
+   padding: 10px 14px;
+   margin-left: 4%;
+   margin-top: 25%;
+   display: flex;
+   flex-direction: column;
+   background-color: var(--nav-background);
+   border-radius: var(--border-radius);
+   justify-content: space-evenly;
+   align-items: center;
+   z-index: 100;
+  }
+
+  .icon-nav {
+   color: var(--icon-color);
+   font-weight: var(--bolder);
+  }
+
+  .name-app {
+   width: 150px;
+   height: 40px;
+   margin-left: -04px;
+   margin-top: -12.4%;
+   padding-top: 2%;
+   font-size: 20px;
+   background: var(--nav-background);
+   color: var(--name-application-color);
+   text-align: var(--text-align);
+   border-radius: 20px 20px 0 0;
+  }
+
+  .con {
+   margin-top: 30%;
+  }
+
+  nav {
+   width: 300px;
+   height: auto;
+   display: none;
+   min-height: 50px;
+   background-color: var(--nav-background);
+   border-radius: var(--border-radius);
+   font-size: 3rem;
+   padding: 5px;
+  }
+
+  .head {
+   display: block;
+   margin-top: 10%;
+  }
+
+  .id {
+   display: flex;
+   font-size: 20px;
+   margin-left: 4%;
+   color: var(--nav-color);
+   cursor: pointer;
+  }
+
+  .name {
+   display: flex;
+   font-size: 20px;
+   margin-left: 4%;
+   color: var(--nav-color);
+   cursor: pointer;
+  }
+
+  .name-profile,
+  .email-profile {
+   font-size: 20px;
+   margin-left: 4%;
+   color: var(--nav-color);
+   cursor: pointer;
+  }
+
+  .menu-profile-btn {
+   display: flex;
+   gap: 5%;
+   justify-content: space-between;
+  }
+
+  .add-post-at-profile {
+   width: 30%;
+   height: 40px;
+   font-size: 20px;
+   border: none;
+   border-radius: var(--border-radius);
+   background: transparent;
+  }
+
+  .edit-post-at-profile {
+   width: 30%;
+   height: 40px;
+   font-size: 20px;
+   border: none;
+   border-radius: var(--border-radius);
+   background: transparent;
+  }
+
+  .add-notes {
+   font-size: 2rem;
+   margin-top: 1%;
+   margin-left: 8px;
+  }
+
+  .container {
+   padding: 4rem 0 0 0;
+  }
+
+  #add {
+   display: none;
+   width: 305px;
+   background-color: var(--body-background);
+   margin-top: -4rem;
+   margin-left: 20%;
+   padding: 1rem 2rem;
+   border-radius: var(--border-radius);
+   border: 2px solid #42445A;
+  }
+
+  .show-menu {
+   display: none;
+  }
+
+  .setting {
+   display: none;
+  }
+
+  .setting-menu {
+   width: 270px;
+   display: flex;
+   gap: 8%;
+   justify-content: space-between;
+   margin-left: 26%;
+  }
+
+  .icon-menu-setting {
+   font-size: 25px;
+   font-weight: 600;
+  }
+
+  .setting-menu-btn {
+   width: 200px;
+   height: 60px;
+   background: var(--nav-background);
+   border-radius: var(--border-radius);
+   border: none;
+   font-size: 22px;
+  }
+
+  .setting-label {
+   margin-left: 25%;
+   color: var(--btn-color);
+   font-size: 25px;
+  }
+
+  .setting-option {
+   margin-left: 25%;
+   color: var(--btn-color);
+   font-size: 20px;
+  }
+
+  .setting-icon {
+   font-size: 22px;
+   padding: 4%;
+   font-weight: var(--bolder);
+  }
+
+  .setting-icon a {
+   color: var(--icon-color);
+   text-decoration: none;
+  }
+
+  .change-nav {
+   display: flex;
+   gap: 1%;
+   margin-left: 25%;
+  }
+
+  .bgnav {
+   width: 105px;
+   height: 30px;
+   background: red;
+   border-radius: var(--border-radius);
+   margin-left: 4%;
+  }
+
+  #nav1 {
+   background: #003850;
+  }
+
+  #nav2 {
+   background: #F84808;
+  }
+
+  #nav3 {
+   background: #FF1744;
+  }
+
+  #titlec1 {
+   background: #FF5FA0;
+  }
+
+  #titlec2 {
+   background: #39F5DE;
+  }
+
+  #titlec3 {
+   background: #F8E356;
+  }
+
+  #menuic {
+   width: 310px;
+   height: 53px;
+   font-size: 12px;
+   font-weight: normal;
+   align-items: var(--align-items);
+   background: var(--nav-background);
+   color: var(--btn-color);
+   margin-left: 22%;
+   margin-top: 10px;
+   padding-left: -10px;
+   border-radius: var(--border-radius);
+  }
+
+  .icon-menu {
+   display: block;
+   font-size: 12px;
+  }
+
+  .form-control {
+   display: flex;
+   flex-direction: column;
+   margin: 1.5rem 0;
+  }
+
+  input {
+   padding: 10px 0;
+   width: 100%;
+   font-size: 18px;
+   letter-spacing: 1px;
+   border: var(--border);
+   border-radius: var(--border-radius);
+   border-bottom: var(--border-bottom-colors);
+   background-color: transparent;
+   outline: var(--outline);
+   color: var(--input-color);
+  }
+
+  input:placeholder-shown {
+   letter-spacing: 2px;
+   font-size: 15px;
+  }
+
+  textarea {
+   width: 100%;
+   height: 150px;
+   padding: 5px;
+   resize: none;
+   color: var(--input-color);
+   background: var(--body-background);
+   border-radius: var(--border-radius);
+   border: var(--border-bottom-colors);
+  }
+
+  .background-card {
+   width: 120px;
+   height: 50px;
+  }
+
+  .form-control label {
+   font-size: 15px;
+   font-weight: 600;
+   letter-spacing: 1px;
+   padding-bottom: 7px;
+   color: var(--label-color);
+  }
+
+  .submit {
+   width: 100px;
+   height: 40px;
+   border-radius: var(--border-radius);
+   outline: var(--outline);
+   border: var(--border);
+   box-shadow: 0 0 5px #000;
+   background-color: var(--nav-background);
+   color: var(--input-color);
+   font-size: 13px;
+   font-weight: bolder;
+   cursor: pointer;
+   display: block;
+   margin-left: auto;
+   animation-name: border;
+   animation-duration: 10s;
+  }
+
+  @keyframes border {
+   10% {
+    border: 1.5px solid rebeccapurple;
+
+   }
+
+   30% {
+    border: 1.5px solid royalblue;
+   }
+
+   50% {
+    border: 1.5px solid tomato;
+   }
+
+   70% {
+    border: 1.5px solid orangered;
+   }
+
+   90% {
+    border: 1.5px solid yellow;
+   }
+  }
+
+  .submit:hover {
+   box-shadow: 0 0 10px rgb(241, 241, 43);
+   transition: all 0.5s;
+   border: 2px solid rgb(241, 241, 43);
+  }
+
+  .notes {
+   width: 300px;
+   display: block;
+   text-align: justify;
+  }
+
+  .name-notes {
+   font-size: 25px;
+   margin-top: 10%;
+   margin-left: 35%;
+   color: var(--btn-color);
+  }
+
+  #vi {
+   width: 100%;
+   height: 50%;
+   border-radius: var(--border-radius);
+  }
+
+  .video {
+   display: none;
+   margin-top: -60%;
+  }
+
+  .vd-src::-webkit-scrollbar {
+   display: none;
+  }
+
+  .vd-src {
+   display: flex;
+   gap: 2%;
+   flex-wrap: flex;
+   overflow: auto;
+   white-space: nowrap;
+   gap: 5px;
+   margin-left: 25%;
+   margin-top: 45%;
+  }
+
+  iframe {
+   width: 300px;
+   height: 200px;
+   border-radius: var(--border-radius);
+   outline: var(--outline);
+   border: var(--border);
+   transition: height .25s ease-in-out;
+  }
+
+  iframe:hover {
+   width: 300px;
+   height: 550px;
+   border: 2px solid #fff;
+   animation-name: border;
+   animation-duration: 10s;
+  }
+
+  .card {
+   display: flex;
+   flex-direction: column;
+   padding: 1rem 1rem 1rem;
+   border-radius: var(--border-radius);
+   border: var(--border-post);
+   margin: 5px 1rem;
+   margin-left: 34%;
+   overflow-x: hidden;
+   text-align: justify;
+   text-overflow: ellipsis;
+  }
+
+  .card::-webkit-scrollbar {
+   display: none;
+  }
+
+  .btn-rec {
+   display: flex;
+   margin-left: 2px;
+  }
+
+  /*title poste style*/
+  .card h3 {
+   display: flex;
+   flex-direction: column;
+   color: var(--paragraph-title-post-color);
+   font-size: 20px;
+   font-family: var(--font-body-style);
+   padding-bottom: 7px;
+  }
+
+  /*date post style*/
+  .card,
+  date-post {
+   display: flex;
+   flex-direction: column;
+   color: var(--paragraph-date-post-color);
+   font-size: 10px;
+   font-family: var(--font-body-style);
+  }
+
+  /*paragraph post style*/
+  .card,
+  desc-post {
+   display: flex;
+   color: var(--paragraph-post-color);
+   font-size: 13px;
+   font-family: var(--font-body-style);
+  }
+
+  .card,
+  .img {
+   width: 100%;
+   height: 30%;
+   margin-top: 20px;
+   border-radius: var(--border-radius);
+  }
+
+  .share-op {
+   display: none;
+   width: 200px;
+   margin-top: 10px;
+  }
+
+  .par {
+   padding: var(--reaction-post-padding);
+   font-size: 15px;
+   border: var(--border-post);
+   outline: var(--outline);
+   cursor: pointer;
+   border-radius: var(--border-radius);
+   color: var(--reaction-post-color);
+   background: var(--body-background);
+  }
+
+  .par a {
+   text-decoration: none;
+   color: var(--nav-color);
+  }
+
+  .jad,
+  .like,
+  .del,
+  .share {
+   margin-top: 30px;
+   margin-left: 10px;
+  }
+
+  .share {
+   padding: var(--reaction-post-padding);
+   letter-spacing: 1px;
+   font-size: 15px;
+   border: var(--border-post);
+   outline: var(--outline);
+   cursor: pointer;
+   border-radius: var(--border-radius);
+   color: var(--reaction-post-color);
+   background: var(--body-background);
+  }
+
+  .share:hover {
+   padding: var(--reaction-post-padding);
+   letter-spacing: 1px;
+   font-size: 15px;
+   border: var(--border);
+   outline: var(--outline);
+   cursor: pointer;
+   border-radius: var(--border-radius);
+   color: #fff;
+   background: var(--body-background);
+  }
+
+  #fcb {
+   background: blue;
+   color: white;
+   border: none;
+   outline: var(--outline);
+  }
+
+  #inst {
+   background: #FF006C;
+   color: white;
+   border: none;
+   outline: var(--outline);
+
+  }
+
+  #twit {
+   background: #00DDFF;
+   color: var(--input-color);
+   border: none;
+   outline: var(--outline);
+
+  }
+
+  .reacted {
+   display: flex;
+  }
+
+  .par {
+   margin-left: 2px;
+  }
+
+  .jad {
+   padding: var(--reaction-post-padding);
+   letter-spacing: 1px;
+   font-size: 15px;
+   border: var(--border-post);
+   outline: var(--outline);
+   cursor: pointer;
+   border-radius: var(--border-radius);
+   color: var(--reaction-post-color);
+   background: var(--body-background);
+  }
+
+  .like,
+  .notes {
+   letter-spacing: 1px;
+   cursor: pointer;
+   border-radius: var(--border-radius);
+   color: var(--reaction-post-color);
+   background: var(--body-background);
+  }
+
+  .jad,
+  .notes {
+   letter-spacing: 1px;
+   cursor: pointer;
+   border-radius: var(--border-radius);
+   color: var(--reaction-post-color);
+   background: var(--body-background);
+  }
+
+  .like {
+   padding: var(--reaction-post-padding);
+   letter-spacing: 1px;
+   font-size: 15px;
+   border: var(--border-post);
+   outline: var(--outline);
+   cursor: pointer;
+   border-radius: var(--border-radius);
+   color: var(--reaction-post-color);
+   background: var(--body-background);
+  }
+
+
+  .del {
+   display: none;
+   padding: var(--reaction-post-padding);
+   letter-spacing: 1px;
+   font-size: 15px;
+   border: 2px solid gray;
+   outline: var(--outline);
+   cursor: pointer;
+   border-radius: var(--border-radius);
+   color: var(--reaction-post-color);
+   background: var(--body-background);
+  }
+
+  .del:hover {
+   padding: var(--reaction-post-padding);
+   letter-spacing: 1px;
+   font-size: 15px;
+   border: var(--border);
+   outline: var(--outline);
+   cursor: pointer;
+   border-radius: var(--border-radius);
+   color: var(--reaction-post-color);
+   background: var(--body-background);
+  }
+
+  h1 {
+   font-size: 1.2em;
+   text-align: center;
+   color: var(--label-color);
+  }
+
+  .panel {
+   display: none;
+   background: var(--body-background);
+   color: var(--label-color);
+   border-radius: var(--border-radius);
+   border: var(--border-bottom-colors);
+   padding: 1em;
+   width: 300px;
+   margin: auto;
+   margin-top: 5px;
+   margin-left: 25%;
+   max-width: 30em;
+  }
+
+  input {
+   width: 100%;
+   box-sizing: border-box;
+   font-size: 1em;
+   margin-top: 0.5em;
+   padding: 0.5em;
+  }
+
+  input:focus {
+   outline: none;
+  }
+
+  input::after {
+   width: 100%;
+   height: 10px;
+   background: red;
+  }
+
+  #results {
+   background: var(--body-background);
+   border-radius: var(--border-radius);
+   color: var(--label-color);
+   padding: 10px;
+  }
+
+  .nav-list {
+   width: 92.5%;
+   max-width: 30em;
+   text-align: center;
+   margin: auto;
+
+  }
+
+  .add-friend-btn {
+   width: var(--width-get-forget-btn-login);
+   margin: 10px 0;
+   margin-left: 3%;
+   padding: 15px;
+   font-weight: 500;
+   border: var(--border);
+   border-radius: var(--border-radius);
+   background: var(--background-get-btn-add-btn);
+   color: var(--btn-color);
+  }
+
+  .nav-list,
+  button {
+   border-radius: var(--border-radius);
+   color: var(--btn-color);
+  }
+
+  .nav-list,
+  a {
+   border-radius: var(--border-radius);
+   color: var(--text-color);
+   background: transparent;
+   text-decoration: none;
+
+   height: 450px;
+
+  }
+
+  .user-chat-frindes {
+   display: block;
+   width: 300px;
+   border-radius: var(--border-radius);
+   background: var(--nav-background);
+   padding: 4%;
+   margin-left: 25%;
+  }
+
+  .chatbox {
+   display: none;
+   width: 300px;
+   margin-top: 4%;
+   margin-left: 25%;
+   background: var(--nav-background);
+   border-radius: var(--border-radius);
+  }
+
+  #boot-online {
+   color: var(--online--);
+  }
+
+  #email-ofline {
+   color: var(--onofline--);
+  }
+
+  #gmail-online {
+   color: var(--online--);
+  }
+
+  #msgeimail {
+   overflow-x: hidden;
+   text-align: justify;
+   text-overflow: ellipsis;
+  }
+
+  #user-page {
+   display: none;
+   width: 300px;
+   background: var(--nav-background);
+   border-radius: var(--border-radius);
+   margin-left: 25%;
+  }
+
+  #form-lab {
+   font-size: 20px;
+   margin-left: 4%;
+   color: var(--btn-color);
+  }
+
+  #form-input {
+   width: 100%;
+   height: var(--height-input-message);
+   background: var(--message-input-background);
+   color: var(--message-input-color);
+  }
+
+  #form-btn {
+   width: 100%;
+   outline: var(--outline);
+   border: none;
+   border-radius: var(--border-radius);
+   height: var(--height-input-message);
+   background: var(--btn-send-message);
+   margin-top: 10%;
+  }
+
+  #useremail {
+   color: var(--btn-color);
+  }
+
+  .chat-details {
+   display: inline-flex;
+   width: 290px;
+   height: 35px;
+   border-radius: var(--border-radius);
+   border: var(--border-head-chat);
+   background: var(--head-chat);
+   color: var(--label-color);
+  }
+
+  .chat-email-details {
+   display: block;
+   width: 300px;
+   height: 50px;
+   margin-left: 1px;
+   border-radius: var(--border-radius);
+   border: var(--border-head-chat);
+   background: var(--head-chat);
+   color: var(--label-color);
+  }
+
+  .chat-label {
+   color: var(--label-color);
+   font-size: 16px;
+   margin-left: 4%;
+   margin-top: -4px;
+  }
+
+  .chat-icon {
+   height: 10px;
+   width: 10px;
+   font-size: 35px;
+   margin-left: 30%;
+   margin-top: -1%;
+  }
+
+  .chatlogs {
+   padding: 10px;
+  }
+
+  .chat {
+   margin-left: 5%;
+   margin-bottom: 40px;
+  }
+
+  .chat-setting {
+   display: none;
+   flex-direction: column;
+   width: 290px;
+   height: 40%;
+   background: black;
+   border-radius: var(--border-radius);
+   padding: 4%;
+   margin-left: 2%;
+  }
+
+  .chat-setting-menu {
+   width: 265px;
+   height: 40px;
+   border-radius: var(--border-radius);
+   background: var(--head-chat);
+   border: none;
+   font-size: 23px;
+  }
+
+  .chat-setting-menu-name {
+   font-size: 20px;
+   text-align: start;
+   color: #fff;
+  }
+
+  .chat .chat-message {
+   width: 80%;
+   padding: 15px;
+   border-radius: var(--border-radius);
+   color: #fff;
+   font-size: 18px;
+  }
+
+  .user .chat-message {
+   height: var(--height-message);
+   background: var(--user-message);
+   border-radius: 40px 40px 0 40px;
+   margin-top: 5%;
+   margin-left: 20%;
+  }
+
+  .bot .chat-message {
+   height: var(--height-message);
+   background: var(--boot-message);
+   border-radius: 40px 40px 40px 0;
+   margin-left: -5%;
+   order: -1;
+  }
+
+  .chat-form {
+   margin-top: -3%;
+   margin-left: 8%;
+  }
+
+  .chat-form input {
+   background: #fbfbfb;
+   width: 100%;
+   height: var(--height-input-message);
+   border: none;
+   border-radius: var(--border-radius);
+   outline: var(--outline);
+   margin-left: -4%;
+   padding: 10px;
+   font-size: 18px;
+   color: var(--message-input-color);
+  }
+
+  .chat-appel-video {
+   display: none;
+  }
+
+  .chat-appel-video-control {
+   display: flex;
+   gap: 10%;
+   width: var(--width-nav);
+   margin-left: 4%;
+  }
+
+  .chat-list {
+   display: none;
+   height: 70%;
+   overflow-x: hidden;
+   text-align: justify;
+   text-overflow: ellipsis;
+  }
+
+  .btn-control {
+   width: 100px;
+   height: 40px;
+   background: var(--nav-background);
+   border: var(--border);
+   border-radius: var(--border-radius);
+  }
+
+  #callend {
+   width: 100px;
+   height: 40px;
+   background: var(--callend-background);
+   border: var(--border);
+   border-radius: var(--border-radius);
+  }
+
+  #head {
+   width: 310px;
+   background: var(--nav-background);
+   margin-left: 22%;
+  }
+
+  .menu-profile {
+   display: flex;
+   gap: 2%;
+   width: 300px;
+   height: 60px;
+   border: 2px solid red;
+   justify-content: space-around;
+   border-radius: var(--border-radius);
+  }
+
+  #vi {
+   display: block;
+   width: var(--width-nav);
+   height: 350px;
+   margin-left: 4%;
+   border-radius: var(--border-radius);
+  }
+
+  .box {
+   display: none;
+   background-color: var(--primary-color);
+   margin-top: -15%;
+   padding: 30px;
+   width: 400px;
+   border-radius: var(--border-radius);
+  }
+
+  .qr-header h1 {
+   font-size: 26px;
+   text-align: center;
+   color: var(--secondary-color);
+   margin-bottom: 24px;
+   text-transform: uppercase;
+  }
+
+  .qr-header input {
+   width: 100%;
+   margin-block: 12px;
+  }
+
+  #qr-text {
+   border-bottom: var(--border-bottom-colors);
+  }
+
+  #qr-text .qr-header input,
+  select {
+   padding: 8px;
+   border-radius: var(--border-radius);
+   font-size: 18px;
+   outline: none;
+   border: 2px solid var(--border-color);
+  }
+
+  .qr-header label {
+   color: var(--secondary-color);
+   font-size: 20px;
+  }
+
+  .qr-header div {
+   display: flex;
+   justify-content: space-between;
+  }
+
+  .qr-footer {
+   display: flex;
+   gap: 7%;
+   justify-content: center;
+  }
+
+  .qr-footer a {
+   display: flex;
+   background-color: var(--secondary-color);
+   text-decoration: none;
+   font-size: 20px;
+   padding: 14px 10px;
+   margin-inline: 2px;
+   color: var(--primary-color);
+   font-weight: 600;
+   border-radius: var(--border-radius);
+  }
+
+  .qr-body {
+   display: grid;
+   place-items: center;
+   padding: 20px;
+  }
+
+  .qr-body img {
+   width: 90px;
+   height: 200px;
+   border: 0.5px solid var(--border-color);
+   border-radius: var(--border-radius);
+  }
+
+  #back-login-btn {
+   display: block;
+   width: 150px;
+   height: 50px;
+   padding: 15px;
+   font-size: 15px;
+   font-weight: 500;
+   border: var(--border);
+   border-radius: var(--border-radius);
+   background: var(--background-get-btn-add-btn);
+   color: var(--btn-color);
+   text-align: center;
+  }
+
+  #generateBtn {
+   display: block;
+   width: 150px;
+   height: 50px;
+   padding: 15px;
+   font-size: 15px;
+   font-weight: 500;
+   border: var(--border);
+   border-radius: var(--border-radius);
+   background: var(--background-get-btn-add-btn);
+   color: var(--btn-color);
+   text-align: center;
+  }
+
+  #downloadBtn {
+   width: 150px;
+   height: 50px;
+   padding: 15px;
+   font-size: 15px;
+   font-weight: 500;
+   border: var(--border);
+   border-radius: var(--border-radius);
+   background: var(--background-get-btn-add-btn);
+   align-items: center;
+   justify-content: space-between;
+  }
+
+  .other {
+   width: 20rem;
+   display: flex;
+   flex-wrap: flex;
+   overflow: auto;
+   white-space: nowrap;
+   scroll-snap-align: start;
+   scroll-snap-stop: always;
+   color: var(--text-color);
+   margin-left: 29%;
+
+  }
+
+  .other-post-img {
+   width: 15.9rem;
+   height: 360px;
+   border-radius: var(--border-radius);
+  }
+
+  .other::-webkit-scrollbar {
+   display: none;
+  }
+
+  .post-card {
+   display: block;
+   padding: 1rem 1rem 1rem;
+   height: 480px;
+   width: 18rem;
+   border-radius: var(--border-radius);
+   border: var(--border-post);
+   margin: 5px 1rem;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   text-align: justify;
+   scroll-snap-align: center;
+   animation-name: border;
+   animation-duration: 10s;
+  }
+
+  .post-card:hover {
+   overflow: scroll;
+  }
+
+  /*Publisher name*/
+  .post-card h3 {
+   color: var(--paragraph-title-post-color);
+   font-size: 20px;
+   font-family: var(--font-body-style);
+   padding-bottom: 7px;
+   display: inline;
+  }
+
+  /*date post style*/
+  .post-card h5 {
+   color: var(--paragraph-date-post-color);
+   font-size: 13px;
+   font-family: var(--font-body-style);
+  }
+
+  /*paragraph post style*/
+  .post-card h4 {
+   color: var(--paragraph-post-color);
+   font-size: 14px;
+   font-family: var(--font-body-style);
+   margin-top: 5px;
+   text-overflow: clip;
+  }
+ </style>
+</body>
+
+</html>
