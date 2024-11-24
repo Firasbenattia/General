@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script src="/main.js"></script>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    
+    <div class="column left">
+      <span class="dot" style="background:#ED594A;" onclick="closebrowser()" title="close"></span>
+      <span class="dot" style="background:#FDD800;"></span>
+      <span class="dot" style="background:#5AC05A;" onclick="openbrowser()" title="open"></span>
+    </div>
+    <div class="column middle">
+      <input type="url" id="url" value="http://www.browser.com"></div>
+      <button class="searchbtn" onclick="fun()" title="search"><i class='bx bx-search-alt-2' style='color:#020202' ></i>search</button>
+
+    <div class="column right">
+      <div style="float:right" ondblclick="closemenubar()" onclick="openmenubar()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="menu-bar">
+  <button class="btn-menu" onclick="refresh()"><i class='bx bx-refresh' style='color:#020202' ></i>Refresh</button>
+  <button class="btn-menu" onclick="chrome()"><i class='bx bxl-chrome' style='color:#00ff4b'></i>Chrome</button>
+  <button class="btn-menu" onclick="facebook()"><i class='bx bxl-facebook-square' style='color:#004aff'></i>Facebook</button>
+  <button class="btn-menu" id="account" onclick="account()"><i class='bx bxs-user-account' style='color:#ff7700'></i>Login</button>
+</div>
+<hr>
+<div class="bookmarks">
+     <button class="btn-bookmarks" onclick="youtube()"><i class='bx bxl-youtube' style='color:#ff0000'  ></i>Youtube</button>
+     <button class="btn-bookmarks" onclick="chrome()"><i class='bx bxl-chrome' style='color:#00ff4b'  ></i>Chrome</button>
+     <button class="btn-bookmarks" onclick="facebook()"><i class='bx bxl-facebook-square' style='color:#004aff'  ></i>Facebook</button>
+     <button class="btn-bookmarks"onclick="codingedit()"><i class='bx bx-code-block' style='color:#0a0a0a'  ></i>Coding editor</button>
+     <button class="btn-bookmarks"><i class='bx bx-plus' style='color:#020202'  ></i>Other</button>
+     <button class="btn-bookmarks" id="account" onclick="account()"><i class='bx bxs-user-account' style='color:#ff7700'  ></i>Login</button>
+   </div>
+   <div class="browser-scrol">
+     <input type="text">
+   </div>
+  </div>
+</div>
+
+</body>
+</html> 
